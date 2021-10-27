@@ -1,4 +1,6 @@
-## Welcome to GitHub Pages
+### Welcome to **majkatakata website
+
+I am excited to share my content in an open source enviroment. 
 
 You can use the [editor on GitHub](https://github.com/ledjape/majkatakata/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
 
