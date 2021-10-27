@@ -1,4 +1,4 @@
-### Welcome to **majkatakata website
+### Welcome to **majkatakata** website
 
 I am excited to share my content in an open source enviroment. 
 
