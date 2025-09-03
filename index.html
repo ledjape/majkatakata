@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Brand • One-Pager</title>
+  <meta name="description" content="Lightweight one-page site with Instagram feed and email subscribe." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <style>
+    :root {
+      --max-width: 920px;
+    }
+    body { scroll-behavior: smooth; }
+    main { max-width: var(--max-width); margin-inline: auto; }
+    header, footer { padding: 2rem 0; }
+    .hero { padding: 3rem 0 1rem; text-align: center; }
+    .muted { opacity: .75; }
+    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+    .insta { aspect-ratio: 1 / 1; overflow: hidden; border-radius: 12px; }
+    .logo { font-weight: 700; letter-spacing: .2px; }
+    .cta { position: sticky; bottom: 1rem; display: inline-block; }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <nav>
+      <ul>
+        <li class="logo">Brand</li>
+      </ul>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#instagram">Instagram</a></li>
+        <li><a href="#subscribe" role="button">Subscribe</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Fresh posts. Zero clutter.</h1>
+      <p class="muted">Simple one‑pager that grows with you. Follow along and subscribe for updates.</p>
+      <p><a href="#subscribe" role="button" class="cta">Get updates</a></p>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>Replace this with a concise description (2–3 sentences) of what you do and why your audience should follow. Keep it human and specific.</p>
+    </section>
+
+    <section id="instagram">
+      <h2>Latest on Instagram</h2>
+      <p class="muted">Replace the example post URLs below with your own public post links.</p>
+      <div class="grid">
+        <!-- Instagram single‑post embeds (swap POST_ID_* with your post IDs or full URLs) -->
+        <article class="insta">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/POST_ID_1/" data-instgrm-version="14"></blockquote>
+        </article>
+        <article class="insta">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/POST_ID_2/" data-instgrm-version="14"></blockquote>
+        </article>
+        <article class="insta">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/POST_ID_3/" data-instgrm-version="14"></blockquote>
+        </article>
+      </div>
+      <p><a href="https://www.instagram.com/YOUR_HANDLE/" target="_blank" rel="noopener">See more on Instagram</a></p>
+    </section>
+
+    <section id="subscribe">
+      <h2>Subscribe</h2>
+      <!-- Example Buttondown form; replace YOUR_LIST_ID -->
+      <form action="https://buttondown.email/api/emails/embed-subscribe/YOUR_LIST_ID" method="post" target="_blank">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        <small class="muted">By subscribing, you consent to receive emails. Unsubscribe anytime.</small>
+        <button type="submit">Subscribe</button>
+      </form>
+      <!-- Alternative providers: Beehiiv/Mailchimp/Brevo: swap the <form action> and any hidden inputs as required. -->
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <!-- Example Formspree form; replace YOUR_FORM_ID -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <label for="name">Name</label>
+        <input id="name" name="name" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+      <p class="muted">Prefer email? <a href="mailto:hello@example.com">hello@example.com</a></p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <small class="muted">© <span id="y"></span> Brand. All rights reserved.</small>
+  </footer>
+
+  <!-- Instagram embed script -->
+  <script async src="//www.instagram.com/embed.js"></script>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
