@@ -1,0 +1,2 @@
+# majkatakata
+Blog dev
