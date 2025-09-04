@@ -2,102 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Brand • One-Pager</title>
-  <meta name="description" content="Lightweight one-page site with Instagram feed and email subscribe." />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BLW with Katerina</title>
+  <meta name="description" content="Baby Led Weaning with Katerina – Helping Babies Grow with Confidence, One Bite at a Time" />
+  <!-- Pico.css CDN -->
+  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css" />
   <style>
     :root {
-      --max-width: 920px;
+      scroll-behavior: smooth;
     }
-    body { scroll-behavior: smooth; }
-    main { max-width: var(--max-width); margin-inline: auto; }
-    header, footer { padding: 2rem 0; }
-    .hero { padding: 3rem 0 1rem; text-align: center; }
-    .muted { opacity: .75; }
-    .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-    .insta { aspect-ratio: 1 / 1; overflow: hidden; border-radius: 12px; }
-    .logo { font-weight: 700; letter-spacing: .2px; }
-    .cta { position: sticky; bottom: 1rem; display: inline-block; }
+    header.hero {
+      padding: 6rem 0 4rem;
+      background: linear-gradient(180deg, #f9fbff 0%, #ffffff 100%);
+    }
+    .tagline {
+      font-size: clamp(1.4rem, 2.5vw + 1rem, 2.2rem);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+    .subtle {
+      color: var(--muted-color);
+    }
+    .section {
+      padding: 3rem 0;
+    }
+    .pill {
+      display: inline-block;
+      padding: .4rem .8rem;
+      border-radius: 999px;
+      background: var(--muted-border-color);
+      color: var(--muted-color);
+      font-size: .9rem;
+    }
+    footer {
+      border-top: 1px solid var(--muted-border-color);
+      padding: 2rem 0 3rem;
+      color: var(--muted-color);
+    }
   </style>
 </head>
 <body>
-  <header class="container">
-    <nav>
+  <header class="hero">
+    <nav class="container">
       <ul>
-        <li class="logo">Brand</li>
+        <li><strong>BLW with Katerina</strong></li>
       </ul>
       <ul>
         <li><a href="#about">About</a></li>
-        <li><a href="#instagram">Instagram</a></li>
-        <li><a href="#subscribe" role="button">Subscribe</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#why">Why BLW</a></li>
+        <li><a href="#connect">Connect</a></li>
       </ul>
     </nav>
+
+    <section class="container">
+      <span class="pill">Welcome</span>
+      <h1 class="tagline">Baby Led Weaning with Katerina – Helping Babies Grow with Confidence, One Bite at a Time</h1>
+      <p class="subtle">A simple, joyful, and evidence‑informed approach to introducing real food—led by your baby.</p>
+      <p>
+        <a href="#about" role="button">Learn more</a>
+        <a href="https://instagram.com/majkatakata" target="_blank" rel="noopener" class="secondary">@majkatakata</a>
+      </p>
+    </section>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <h1>Fresh posts. Zero clutter.</h1>
-      <p class="muted">Simple one‑pager that grows with you. Follow along and subscribe for updates.</p>
-      <p><a href="#subscribe" role="button" class="cta">Get updates</a></p>
+  <main>
+    <section id="about" class="section container">
+      <h2>Welcome to BLW with Katerina</h2>
+      <p>Hello and welcome! My name is <strong>Katerina Galić</strong>, and I am a certified instructor for complementary feeding of newborns according to the <strong>Baby Led Weaning (BLW)</strong> method. Through this space, I share knowledge, guidance, and everyday inspiration to support parents who are curious about this beautiful, natural way of introducing food to their little ones.</p>
+      <p>The BLW approach is more than just a feeding method—it is a philosophy that encourages babies to discover food on their own, at their own pace. It respects their independence, instincts, and natural curiosity. With BLW, babies learn to pick up food, bring it to their mouths, and explore different tastes, textures, and colors, all while building important motor skills and confidence.</p>
+      <p>In recent years, images of tiny babies holding big pieces of food have become common on social media. Yet here, in our community, BLW is still a relatively new practice. Many parents approach it with curiosity, but also with questions, doubts, and even fears. My mission is to offer clear, practical, and evidence‑based answers—while encouraging parents to trust their children’s natural abilities.</p>
     </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>Replace this with a concise description (2–3 sentences) of what you do and why your audience should follow. Keep it human and specific.</p>
+    <section id="why" class="section container">
+      <h2>Why BLW?</h2>
+      <ul>
+        <li><strong>Confidence &amp; independence:</strong> Babies lead the process, making mealtimes fun and empowering.</li>
+        <li><strong>Family connection:</strong> They sit at the table with everyone else, sharing the same food in an age‑appropriate way.</li>
+        <li><strong>Healthy habits:</strong> Without distractions like screens, babies learn to listen to their bodies and enjoy real food.</li>
+        <li><strong>Developmental benefits:</strong> From hand–eye coordination to chewing skills, BLW strengthens essential abilities while keeping feeding joyful.</li>
+      </ul>
+
+      <h3>Addressing Common Concerns</h3>
+      <p>Many parents worry about choking or the messiness of self‑feeding. Research shows that babies following BLW are not at higher risk of choking compared to spoon‑fed babies. What’s important is following safety guidelines, preparing food correctly, and creating a calm environment for meals. The “mess” may seem overwhelming at first—but it’s a vital part of learning. Every squish, spill, and smile is a step toward growth.</p>
     </section>
 
-    <section id="instagram">
-      <h2>Latest on Instagram</h2>
-      <p class="muted">Replace the example post URLs below with your own public post links.</p>
-      <div class="grid">
-        <!-- Instagram single‑post embeds (swap POST_ID_* with your post IDs or full URLs) -->
-        <article class="insta">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CL33DVYLHHU/?img_index=1" data-instgrm-version="14"></blockquote>
-        </article>
-        <article class="insta">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CIny22xLG22/" data-instgrm-version="14"></blockquote>
-        </article>
-        <article class="insta">
-          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CG_5SDXrXru/" data-instgrm-version="14"></blockquote>
-        </article>
-      </div>
-      <p><a href="https://www.instagram.com/majkatakata/" target="_blank" rel="noopener">See more on Instagram</a></p>
-    </section>
-
-    <section id="subscribe">
-      <h2>Subscribe</h2>
-      <!-- Example Buttondown form; replace YOUR_LIST_ID -->
-      <form action="https://buttondown.email/api/emails/embed-subscribe/YOUR_LIST_ID" method="post" target="_blank">
-        <label for="email">Email</label>
-        <input id="email" name="email" type="email" placeholder="you@example.com" required>
-        <small class="muted">By subscribing, you consent to receive emails. Unsubscribe anytime.</small>
-        <button type="submit">Subscribe</button>
-      </form>
-      <!-- Alternative providers: Beehiiv/Mailchimp/Brevo: swap the <form action> and any hidden inputs as required. -->
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <!-- Example Formspree form; replace YOUR_FORM_ID -->
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-        <label for="name">Name</label>
-        <input id="name" name="name" required>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-      <p class="muted">Prefer email? <a href="mailto:hello@example.com">hello@example.com</a></p>
+    <section id="connect" class="section container">
+      <h2>My Mission</h2>
+      <p>Through this platform and my Instagram profile <a href="https://instagram.com/majkatakata" target="_blank" rel="noopener"><strong>@majkatakata</strong></a>, I aim to:</p>
+      <ul>
+        <li>Share reliable information and advice on BLW.</li>
+        <li>Provide encouragement for parents starting this journey.</li>
+        <li>Break down myths and fears about complementary feeding.</li>
+        <li>Celebrate the joy, exploration, and connection that comes with letting babies lead.</li>
+      </ul>
+      <article>
+        <header>
+          <strong>Join the community</strong>
+          <small class="subtle">Let’s grow together 🌱</small>
+        </header>
+        <p>Follow along for daily tips, Q&amp;A, and resources to support your BLW journey.</p>
+        <footer>
+          <a href="https://instagram.com/majkatakata" target="_blank" rel="noopener" role="button">Follow @majkatakata</a>
+          <a href="#about" class="secondary">Back to top</a>
+        </footer>
+      </article>
     </section>
   </main>
 
   <footer class="container">
-    <small class="muted">© <span id="y"></span> Brand. All rights reserved.</small>
+    <small>© <span id="year"></span> BLW with Katerina • Baby Led Weaning resources and guidance</small>
   </footer>
 
-  <!-- Instagram embed script -->
-  <script async src="//www.instagram.com/embed.js"></script>
-  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+  <script>
+    // set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
