@@ -1,0 +1,5 @@
+title: majkatakata (Jekyll)
+description: Jekyll experiment branch
+theme: minima
+plugins:
+  - jekyll-feed
