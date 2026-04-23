@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram Client Hub</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        background: #f7f8fb;
+        color: #1c1d23;
+      }
+      .hero {
+        background: linear-gradient(120deg, #833ab4, #fd1d1d, #fcb045);
+        color: white;
+        padding: 3.5rem 1.5rem;
+      }
+      .hero h1,
+      .hero p {
+        max-width: 800px;
+        margin: 0 auto 1rem;
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 1.5rem 3rem;
+      }
+      .grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+      .card {
+        background: #fff;
+        border-radius: 14px;
+        padding: 1rem;
+        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+      }
+      form {
+        display: grid;
+        gap: 0.8rem;
+      }
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid #d8dbeb;
+        border-radius: 8px;
+        padding: 0.6rem;
+        font-size: 0.95rem;
+      }
+      button {
+        background: #833ab4;
+        color: white;
+        border: 0;
+        border-radius: 8px;
+        padding: 0.7rem 1rem;
+        cursor: pointer;
+        font-weight: 700;
+      }
+      .messages {
+        list-style: none;
+        margin: 1rem auto;
+        max-width: 1100px;
+        padding: 0 1.5rem;
+      }
+      .messages li {
+        background: #ddf8e8;
+        color: #0f5d2f;
+        padding: 0.8rem;
+        border-radius: 8px;
+      }
+      .muted {
+        color: #5f6378;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="hero">
+      <h1>Instagram Growth Hub for Clients</h1>
+      <p>
+        Centralize Instagram strategy, playbooks, campaign knowledge, and lead capture in one place.
+        Built for teams that want to educate existing clients and attract new ones.
+      </p>
+    </header>
+
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+
+    <main class="container">
+      <section class="grid" style="margin-bottom: 1.5rem">
+        <article class="card">
+          <h2>Featured Knowledge</h2>
+          {% if featured_article %}
+          <h3>{{ featured_article.title }}</h3>
+          <p>{{ featured_article.summary }}</p>
+          <p class="muted">Published {{ featured_article.created_at|date:"M d, Y" }}</p>
+          {% else %}
+          <p>No featured article yet. Create one in the Django admin panel.</p>
+          {% endif %}
+        </article>
+
+        <article class="card">
+          <h2>Newsletter Subscription</h2>
+          <p class="muted">Capture top-of-funnel interest with a high-intent Instagram insights newsletter.</p>
+          <form method="post">
+            {% csrf_token %}
+            {{ newsletter_form.as_p }}
+            <button type="submit" name="newsletter-submit">Subscribe</button>
+          </form>
+        </article>
+
+        <article class="card">
+          <h2>Become a Client</h2>
+          <p class="muted">Let prospects submit their goals and Instagram handle for a quick audit.</p>
+          <form method="post">
+            {% csrf_token %}
+            {{ lead_form.as_p }}
+            <button type="submit" name="lead-submit">Request Consultation</button>
+          </form>
+        </article>
+      </section>
+
+      <section class="card">
+        <h2>Latest Instagram Strategy Articles</h2>
+        <div class="grid">
+          {% for article in latest_articles %}
+          <article class="card">
+            <h3>{{ article.title }}</h3>
+            <p>{{ article.summary }}</p>
+            <p class="muted">{{ article.created_at|date:"M d, Y" }}</p>
+          </article>
+          {% empty %}
+          <p>Add articles from admin to start building your knowledge hub.</p>
+          {% endfor %}
+        </div>
+      </section>
+
+      <section class="card" style="margin-top: 1.5rem">
+        <h2>Admin Workflow</h2>
+        <ol>
+          <li>Create a superuser: <code>python manage.py createsuperuser</code></li>
+          <li>Log in at <code>/admin/</code></li>
+          <li>Manage articles, newsletter subscribers, and lead requests</li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>
