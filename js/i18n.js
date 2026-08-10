@@ -13,7 +13,7 @@ const translations = {
     
     // Hero Section
     hero_badge: "✨ Добредојдовте во majkatakata",
-    hero_title_1: "Дохрана водена од бебето со Катерина – ",
+    hero_title_1: "Baby Led Weaning - ",
     hero_title_2: "Помагаме на бебињата да растат со самодоверба",
     hero_subtitle: "Едноставен, радосен и научно заснован пристап за воведување вистинска храна — воден од вашето бебе, загриз по загриз.",
     hero_btn_primary: "Приклучи се на обука",
@@ -23,7 +23,7 @@ const translations = {
     stat_2_title: "100%",
     stat_2_sub: "Научно поддржано",
     stat_3_title: "Solid Starts",
-    stat_3_sub: "PRO Сертифицирана",
+    stat_3_sub: "Официјален претставник",
     hero_badge_name: "Катерина Галиќ",
     hero_badge_sub: "Сертифициран BLW Специјалист",
     
@@ -33,8 +33,9 @@ const translations = {
     about_p1: "Здраво и добредојдовте! Моето име е <strong>Катерина Галиќ</strong> и сум сертифициран инструктор за дополнителна исхрана на доенчиња според методот <strong>Baby Led Weaning (BLW)</strong>.",
     about_p2: "Пристапот BLW е повеќе од само метод на хранење — тоа е филозофија која ги охрабрува бебињата самостојно да ја откриваат храната, со свое темпо. Ги почитува нивната независност, инстинкти и природна љубопитност.",
     about_p3: "Во последните години, сликите од мали бебиња кои држат големи парчиња храна се секојдневие на социјалните мрежи. Но тука, во нашата заедница, BLW е сè уште нов концепт кој носи прашања, сомнежи и грижи. Мојата мисија е да понудам јасни, практични и проверени информации — поддржувајќи ги родителите на секој чекор.",
+    about_p4: "Катерина е официјално акредитирана како претставник за Северна Македонија во глобалниот именик на <a href=\"https://solidstarts.com/find-pediatric-feeding-specialist/\" target=\"_blank\" rel=\"noopener\">Solid Starts Directory</a>. <strong>Solid Starts</strong> е водечка светска организација од педијатри, нутриционисти и терапевти за исхрана посветени на обезбедување научно поддржани водичи за безбедна дохрана на бебиња.",
     cred_1: "📖 Сертифициран BLW инструктор",
-    cred_2: "📝 Solid Starts PRO Сертифицирана",
+    cred_2: "📝 <a href=\"https://solidstarts.com/find-pediatric-feeding-specialist/\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit; text-decoration:underline;\">Официјален Solid Starts претставник за С. Македонија</a>",
     cred_3: "💻 Онлајн обука за родители",
     
     phil_title: "Нашата основна филозофија",
@@ -121,7 +122,7 @@ const translations = {
     
     // Hero Section
     hero_badge: "✨ Welcome to majkatakata",
-    hero_title_1: "Baby Led Weaning with Katerina – ",
+    hero_title_1: "Baby Led Weaning - ",
     hero_title_2: "Helping Babies Grow with Confidence",
     hero_subtitle: "A simple, joyful, and evidence-informed approach to introducing real food—led by your baby, one bite at a time.",
     hero_btn_primary: "Join Next Workshop",
@@ -131,7 +132,7 @@ const translations = {
     stat_2_title: "100%",
     stat_2_sub: "Evidence-Informed",
     stat_3_title: "Solid Starts",
-    stat_3_sub: "PRO Certified",
+    stat_3_sub: "Official Representative",
     hero_badge_name: "Katerina Galić",
     hero_badge_sub: "Certified BLW Specialist",
     
@@ -141,8 +142,9 @@ const translations = {
     about_p1: "Hello and welcome! My name is <strong>Katerina Galić</strong>, and I am a certified instructor for complementary feeding of newborns according to the <strong>Baby Led Weaning (BLW)</strong> method.",
     about_p2: "The BLW approach is more than just a feeding method—it is a philosophy that encourages babies to discover food on their own, at their own pace. It respects their independence, instincts, and natural curiosity.",
     about_p3: "In recent years, pictures of tiny babies holding big pieces of food have flooded social media. Yet in our local community, BLW is still a fresh concept that brings questions, doubts, and worries. My mission is to offer clear, practical, and evidence-based guidance while supporting parents every step of the way.",
+    about_p4: "Katerina is officially featured as a credited representative for North Macedonia in the global <a href=\"https://solidstarts.com/find-pediatric-feeding-specialist/\" target=\"_blank\" rel=\"noopener\">Solid Starts Directory</a>. <strong>Solid Starts</strong> is the world’s leading team of pediatricians, dietitians, and feeding therapists dedicated to evidence-based guidance for starting solids.",
     cred_1: "📖 Certified BLW Instructor",
-    cred_2: "📝 Solid Starts PRO Certified",
+    cred_2: "📝 <a href=\"https://solidstarts.com/find-pediatric-feeding-specialist/\" target=\"_blank\" rel=\"noopener\" style=\"color:inherit; text-decoration:underline;\">Official Solid Starts Representative for N. Macedonia</a>",
     cred_3: "💻 Online Parent Training",
     
     phil_title: "Our Core Philosophy",
