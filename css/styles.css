@@ -243,6 +243,40 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
+/* Language Switcher Toggle */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  background: var(--color-primary-soft);
+  padding: 0.2rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-border);
+  gap: 0.2rem;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  padding: 0.35rem 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.lang-btn.active {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: 0 2px 6px rgba(217, 119, 87, 0.3);
+}
+
+.lang-btn:hover:not(.active) {
+  color: var(--color-primary);
+}
+
 .mobile-toggle {
   display: none;
   background: none;

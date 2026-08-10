@@ -1,16 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="mk">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Baby Led Weaning with Katerina | majkatakata</title>
-  <meta name="description" content="Helping babies grow with confidence, one bite at a time. Certified Baby-Led Weaning (BLW) instructor offering parent workshops and guidance." />
+  <title>Дохрана водена од бебето со Катерина | majkatakata</title>
+  <meta name="description" content="Помагаме на бебињата да растат со самодоверба, загриз по загриз. Сертифициран инструктор за Baby-Led Weaning (BLW)." />
   
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://majkatakata.com/" />
-  <meta property="og:title" content="Baby Led Weaning with Katerina | majkatakata" />
-  <meta property="og:description" content="A simple, joyful, and evidence-informed approach to introducing real food—led by your baby." />
+  <meta property="og:title" content="Дохрана водена од бебето со Катерина | majkatakata" />
+  <meta property="og:description" content="Едноставен, радосен и научно заснован пристап за воведување вистинска храна — воден од вашето бебе." />
   <meta property="og:image" content="https://majkatakata.com/resources/img/kate_1.jpg" />
 
   <!-- Fonts & Custom Styles -->
@@ -25,15 +25,23 @@
         <span class="logo-heart">♥</span> majkatakata
       </a>
       
-      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
-        ☰
-      </button>
+      <div style="display: flex; align-items: center; gap: 1rem;">
+        <!-- Language Switcher Toggle -->
+        <div class="lang-switcher">
+          <button class="lang-btn active" data-lang="mk">🇲🇰 MK</button>
+          <button class="lang-btn" data-lang="en">🇬🇧 EN</button>
+        </div>
+
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+          ☰
+        </button>
+      </div>
 
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#why">Why BLW</a></li>
-        <li><a href="#instagram">Instagram</a></li>
-        <li><a href="#connect" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.9rem;">Join Community</a></li>
+        <li><a href="#about" data-i18n="nav_about">За мене</a></li>
+        <li><a href="#why" data-i18n="nav_why">Зошто BLW</a></li>
+        <li><a href="#instagram" data-i18n="nav_instagram">Инстаграм</a></li>
+        <li><a href="#connect" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.9rem;" data-i18n="nav_join">Приклучи се</a></li>
       </ul>
     </div>
   </header>
@@ -43,36 +51,37 @@
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="hero-content">
-          <span class="badge">
-            <span>✨</span> Welcome to majkatakata
+          <span class="badge" data-i18n="hero_badge">
+            ✨ Добредојдовте во majkatakata
           </span>
           <h1 class="hero-title">
-            Baby Led Weaning with Katerina – <span>Helping Babies Grow with Confidence</span>
+            <span data-i18n="hero_title_1">Дохрана водена од бебето со Катерина – </span>
+            <span style="color: var(--color-primary);" data-i18n="hero_title_2">Помагаме на бебињата да растат со самодоверба</span>
           </h1>
-          <p class="hero-subtitle">
-            A simple, joyful, and evidence-informed approach to introducing real food—led by your baby, one bite at a time.
+          <p class="hero-subtitle" data-i18n="hero_subtitle">
+            Едноставен, радосен и научно заснован пристап за воведување вистинска храна — воден од вашето бебе, загриз по загриз.
           </p>
           <div class="btn-group">
-            <a href="#connect" class="btn btn-primary">
-              Join Next Workshop
+            <a href="#connect" class="btn btn-primary" data-i18n="hero_btn_primary">
+              Приклучи се на обука
             </a>
-            <a href="https://instagram.com/majkatakata" target="_blank" rel="noopener" class="btn btn-secondary">
-              <span>📷</span> @majkatakata
+            <a href="https://instagram.com/majkatakata" target="_blank" rel="noopener" class="btn btn-secondary" data-i18n="hero_btn_secondary">
+              📷 @majkatakata
             </a>
           </div>
           
           <div class="hero-stats">
             <div class="stat-item">
-              <h3>BLW Pro</h3>
-              <p>Certified Instructor</p>
+              <h3 data-i18n="stat_1_title">BLW Инструктор</h3>
+              <p data-i18n="stat_1_sub">Сертифицирана</p>
             </div>
             <div class="stat-item">
-              <h3>100%</h3>
-              <p>Evidence-Informed</p>
+              <h3 data-i18n="stat_2_title">100%</h3>
+              <p data-i18n="stat_2_sub">Научно поддржано</p>
             </div>
             <div class="stat-item">
-              <h3>Solid Starts</h3>
-              <p>PRO Certified</p>
+              <h3 data-i18n="stat_3_title">Solid Starts</h3>
+              <p data-i18n="stat_3_sub">PRO Сертифицирана</p>
             </div>
           </div>
         </div>
@@ -84,8 +93,8 @@
           <div class="hero-floating-badge">
             <div class="floating-icon">👶</div>
             <div>
-              <strong style="display:block; font-size:0.95rem; color:var(--color-text-main);">Katerina Galić</strong>
-              <small style="color:var(--color-text-muted);">Certified BLW Specialist</small>
+              <strong style="display:block; font-size:0.95rem; color:var(--color-text-main);" data-i18n="hero_badge_name">Катерина Галиќ</strong>
+              <small style="color:var(--color-text-muted);" data-i18n="hero_badge_sub">Сертифициран BLW Специјалист</small>
             </div>
           </div>
         </div>
@@ -96,50 +105,50 @@
     <section id="about" class="section">
       <div class="container">
         <div class="section-header">
-          <span class="badge badge-secondary">About Katerina</span>
-          <h2>Empowering Parents to Trust Their Baby’s Instincts</h2>
+          <span class="badge badge-secondary" data-i18n="about_badge">За Катерина</span>
+          <h2 data-i18n="about_heading">Ополномоштување на родителите да веруваат во инстинктите на своето бебе</h2>
         </div>
 
         <div class="about-grid">
           <div class="about-card">
-            <p>
-              Hello and welcome! My name is <strong>Katerina Galić</strong>, and I am a certified instructor for complementary feeding of newborns according to the <strong>Baby Led Weaning (BLW)</strong> method.
+            <p data-i18n="about_p1">
+              Здраво и добредојдовте! Моето име е <strong>Катерина Галиќ</strong> и сум сертифициран инструктор за дополнителна исхрана на доенчиња според методот <strong>Baby Led Weaning (BLW)</strong>.
             </p>
-            <p>
-              The BLW approach is more than just a feeding method—it is a philosophy that encourages babies to discover food on their own, at their own pace. It respects their independence, instincts, and natural curiosity.
+            <p data-i18n="about_p2">
+              Пристапот BLW е повеќе од само метод на хранење — тоа е филозофија која ги охрабрува бебињата самостојно да ја откриваат храната, со свое темпо. Ги почитува нивната независност, инстинкти и природна љубопитност.
             </p>
-            <p>
-              In recent years, pictures of tiny babies holding big pieces of food have flooded social media. Yet in our local community, BLW is still a fresh concept that brings questions, doubts, and worries. My mission is to offer clear, practical, and evidence-based guidance while supporting parents every step of the way.
+            <p data-i18n="about_p3">
+              Во последните години, сликите од мали бебиња кои држат големи парчиња храна се секојдневие на социјалните мрежи. Но тука, во нашата заедница, BLW е сè уште нов концепт кој носи прашања, сомнежи и грижи. Мојата мисија е да понудам јасни, практични и проверени информации — поддржувајќи ги родителите на секој чекор.
             </p>
             <div class="credential-tags">
-              <span class="credential-tag">📖 Certified BLW Instructor</span>
-              <span class="credential-tag">📝 Solid Starts PRO Certified</span>
-              <span class="credential-tag">💻 Online Parent Training</span>
+              <span class="credential-tag" data-i18n="cred_1">📖 Сертифициран BLW инструктор</span>
+              <span class="credential-tag" data-i18n="cred_2">📝 Solid Starts PRO Сертифицирана</span>
+              <span class="credential-tag" data-i18n="cred_3">💻 Онлајн обука за родители</span>
             </div>
           </div>
 
           <div style="background: var(--color-primary-soft); padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(217, 119, 87, 0.2);">
-            <h3 style="color: var(--color-primary); margin-bottom: 1rem; font-size: 1.5rem;">Our Core Philosophy</h3>
+            <h3 style="color: var(--color-primary); margin-bottom: 1rem; font-size: 1.5rem;" data-i18n="phil_title">Нашата основна филозофија</h3>
             <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.25rem;">
               <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
                 <span style="background: var(--color-surface); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--color-primary); flex-shrink: 0;">1</span>
                 <div>
-                  <strong>Respect Baby's Autonomy</strong>
-                  <p style="font-size: 0.9rem; color: var(--color-text-muted);">Letting infants explore textures and learn self-regulation naturally.</p>
+                  <strong data-i18n="phil_1_title">Почит кон автономијата на бебето</strong>
+                  <p style="font-size: 0.9rem; color: var(--color-text-muted);" data-i18n="phil_1_desc">Бебињата ги истражуваат текстурите и учат саморегулација природно.</p>
                 </div>
               </li>
               <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
                 <span style="background: var(--color-surface); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--color-primary); flex-shrink: 0;">2</span>
                 <div>
-                  <strong>Shared Family Mealtimes</strong>
-                  <p style="font-size: 0.9rem; color: var(--color-text-muted);">Eating together builds social connection and healthy habits early on.</p>
+                  <strong data-i18n="phil_2_title">Заеднички семејни оброци</strong>
+                  <p style="font-size: 0.9rem; color: var(--color-text-muted);" data-i18n="phil_2_desc">Јадењето заедно гради социјална поврзаност и здрави навики од најрана возраст.</p>
                 </div>
               </li>
               <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
                 <span style="background: var(--color-surface); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--color-primary); flex-shrink: 0;">3</span>
                 <div>
-                  <strong>Safety First Guidance</strong>
-                  <p style="font-size: 0.9rem; color: var(--color-text-muted);">Equipping parents with clear CPR, preparation, and choking-prevention rules.</p>
+                  <strong data-i18n="phil_3_title">Безбедност на прво место</strong>
+                  <p style="font-size: 0.9rem; color: var(--color-text-muted);" data-i18n="phil_3_desc">Опремување на родителите со јасни правила за подготовка, безбедност и превенција.</p>
                 </div>
               </li>
             </ul>
@@ -152,73 +161,73 @@
     <section id="why" class="section" style="background: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
       <div class="container">
         <div class="section-header">
-          <span class="badge">The Benefits</span>
-          <h2>Why Choose Baby-Led Weaning?</h2>
-          <p>Discover how self-feeding nurtures growth, motor skills, and mealtime joy.</p>
+          <span class="badge" data-i18n="why_badge">Придобивки</span>
+          <h2 data-i18n="why_heading">Зошто да изберете Baby-Led Weaning?</h2>
+          <p data-i18n="why_subheading">Откријте како самостојното хранење поттикнува развој, моторни вештини и радост за време на оброците.</p>
         </div>
 
         <div class="features-grid">
           <div class="feature-card">
             <div class="feature-icon">🌱</div>
-            <h3>Confidence & Independence</h3>
-            <p>Babies lead the feeding process, making mealtimes empowering, stress-free, and fun.</p>
+            <h3 data-i18n="feat_1_title">Самодоверба и независност</h3>
+            <p data-i18n="feat_1_desc">Бебињата го водат процесот, правејќи ги оброците забавни, позитивни и без стрес.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">👨‍👩‍👧</div>
-            <h3>Family Connection</h3>
-            <p>Babies sit at the family table, sharing real meals adapted to their age and development.</p>
+            <h3 data-i18n="feat_2_title">Семејна поврзаност</h3>
+            <p data-i18n="feat_2_desc">Бебињата седат на семејната маса, споделувајќи иста храна прилагодена на нивната возраст.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">🥑</div>
-            <h3>Healthy Eating Habits</h3>
-            <p>Without screens or forced feeding, infants tune into satiety cues and enjoy diverse foods.</p>
+            <h3 data-i18n="feat_3_title">Здрави навики на исхрана</h3>
+            <p data-i18n="feat_3_desc">Без екрани и без форсирање, доенчињата учат да го слушаат своето тело и да уживаат во вистинска храна.</p>
           </div>
 
           <div class="feature-card">
             <div class="feature-icon">💡</div>
-            <h3>Motor Skill Development</h3>
-            <p>Develops hand-eye coordination, pincer grasp, and chewing capabilities naturally.</p>
+            <h3 data-i18n="feat_4_title">Развој на моторни вештини</h3>
+            <p data-i18n="feat_4_desc">Развива координација рака-око, фино фаќање (пинцета фаќање) и вештини за џвакање.</p>
           </div>
         </div>
 
         <!-- Addressing Concerns Accordion -->
         <div class="concerns-box">
-          <h3 style="margin-bottom: 1.5rem; text-align: center;">Addressing Common Parent Concerns</h3>
+          <h3 style="margin-bottom: 1.5rem; text-align: center;" data-i18n="concerns_title">Одговори на најчестите грижи на родителите</h3>
           
           <div class="accordion-item active">
             <button class="accordion-header">
-              <span>Is my baby at higher risk of choking with BLW?</span>
+              <span data-i18n="acc_1_q">Дали бебето е изложено на поголем ризик од задушување со BLW?</span>
               <span class="accordion-icon">▼</span>
             </button>
             <div class="accordion-content">
-              <p>
-                Research demonstrates that babies starting BLW are not at higher risk of choking compared to traditional spoon-fed infants. What matters most is following proper food preparation rules (size, texture, shape) and ensuring your baby sits upright in an un-reclined high chair.
+              <p data-i18n="acc_1_a">
+                Истражувањата покажуваат дека бебињата кои следат BLW немаат поголем ризик од задушување во споредба со оние хранети со лажичка. Најважно е следењето на насоките за подготовка на храната (големина, текстура, облик) и правилно седење во столче.
               </p>
             </div>
           </div>
 
           <div class="accordion-item">
             <button class="accordion-header">
-              <span>How do I manage the mess during self-feeding?</span>
+              <span data-i18n="acc_2_q">Како да се справам со нередот за време на хранењето?</span>
               <span class="accordion-icon">▼</span>
             </button>
             <div class="accordion-content">
-              <p>
-                Mess is a vital sensory milestone! Touching, squeezing, and exploring food helps babies feel comfortable with textures. Using splash mats, long-sleeved bibs, and maintaining a relaxed mindset turns mealtime into joyful learning.
+              <p data-i18n="acc_2_a">
+                Нередот е клучен дел од учењето! Допирањето и истражувањето на храната им помага на бебињата да се чувствуваат удобно со текстурите. Користењето заштитни подлоги и позитивен пристап го претвора оброкот во учење низ игра.
               </p>
             </div>
           </div>
 
           <div class="accordion-item">
             <button class="accordion-header">
-              <span>When is the right time to start BLW?</span>
+              <span data-i18n="acc_3_q">Кога е вистинското време за почеток со BLW?</span>
               <span class="accordion-icon">▼</span>
             </button>
             <div class="accordion-content">
-              <p>
-                Most babies show readiness around 6 months when they can sit unsupported, have good neck control, and demonstrate curiosity about food while reaching out to grasp items.
+              <p data-i18n="acc_3_a">
+                Повеќето бебиња покажуваат подготвеност околу 6 месеци кога можат стабилно да седат без поддршка, имаат добра контрола на главата и покажуваат интерес за храна кога посегнуваат да ја фатат.
               </p>
             </div>
           </div>
@@ -230,16 +239,16 @@
     <section id="instagram" class="section instagram-section">
       <div class="container">
         <div class="section-header">
-          <span class="badge badge-secondary">Community Inspiration</span>
-          <h2>Follow Along on Instagram</h2>
-          <p>Everyday meals, recipe ideas, and real-life BLW tips shared with parents.</p>
+          <span class="badge badge-secondary" data-i18n="ig_badge">Заедница и инспирација</span>
+          <h2 data-i18n="ig_heading">Следете нè на Инстаграм</h2>
+          <p data-i18n="ig_subheading">Секојдневни оброци, идеи за рецепти и совети за BLW споделени со родителите.</p>
         </div>
 
         <div class="ig-scroller" aria-label="Instagram posts carousel">
           <!-- Featured Story Post requested by user -->
           <article class="ig-card ig-card-featured">
             <div class="ig-card-header">
-              <span class="badge" style="font-size: 0.75rem; padding: 0.25rem 0.6rem;">⭐ Our Journey Beginning</span>
+              <span class="badge" style="font-size: 0.75rem; padding: 0.25rem 0.6rem;" data-i18n="ig_featured_tag">⭐ Почетокот на нашето патешествие</span>
             </div>
             <blockquote class="instagram-media"
               data-instgrm-permalink="https://www.instagram.com/p/CIny22xLG22/"
@@ -273,11 +282,11 @@
         </div>
 
         <div class="btn-group" style="justify-content: center; margin-top: 2rem;">
-          <a href="https://www.instagram.com/majkatakata/" target="_blank" rel="noopener" class="btn btn-secondary">
-            <span>📷</span> View Profile @majkatakata
+          <a href="https://www.instagram.com/majkatakata/" target="_blank" rel="noopener" class="btn btn-secondary" data-i18n="ig_btn_profile">
+            <span>📷</span> Видете го профилот @majkatakata
           </a>
-          <a href="https://www.instagram.com/majkatakata/reels/" target="_blank" rel="noopener" class="btn btn-primary">
-            Watch BLW Video Reels
+          <a href="https://www.instagram.com/majkatakata/reels/" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="ig_btn_reels">
+            Гледајте видео содржини (Reels)
           </a>
         </div>
       </div>
@@ -287,16 +296,16 @@
     <section id="connect" class="section contact-section">
       <div class="container contact-grid">
         <div class="contact-info">
-          <span class="badge">Join Next Session</span>
-          <h2>Connect & Sign Up for Training</h2>
-          <p>
-            Ready to start or level up your BLW journey? Register your interest below and I’ll send you upcoming workshop dates, guides, and details.
+          <span class="badge" data-i18n="contact_badge">Приклучете се</span>
+          <h2 data-i18n="contact_heading">Поврзете се и пријавете се за обука</h2>
+          <p data-i18n="contact_desc">
+            Подготвени сте да започнете или да го надградите вашето BLW патешествие? Регистрирајте го вашиот интерес подолу и ќе ве контактираме со информации за следните термини.
           </p>
 
           <div class="contact-method">
             <div class="contact-icon">📧</div>
             <div>
-              <strong>Instagram Direct Messages</strong>
+              <strong data-i18n="contact_dm_title">Инстаграм директни пораки</strong>
               <p style="font-size:0.9rem; color:var(--color-text-muted);">
                 <a href="https://instagram.com/majkatakata" target="_blank" rel="noopener">@majkatakata</a>
               </p>
@@ -306,9 +315,9 @@
           <div class="contact-method">
             <div class="contact-icon">🌐</div>
             <div>
-              <strong>Official Sign-Up Link</strong>
+              <strong data-i18n="contact_google_title">Официјален формулар за пријава</strong>
               <p style="font-size:0.9rem; color:var(--color-text-muted);">
-                <a href="https://shorturl.at/GhdGw" target="_blank" rel="noopener">Open Google Registration Form</a>
+                <a href="https://shorturl.at/GhdGw" target="_blank" rel="noopener" data-i18n="contact_google_link">Отворете го Google формуларот</a>
               </p>
             </div>
           </div>
@@ -316,9 +325,9 @@
 
         <!-- Contact Form Card -->
         <div class="contact-form-card">
-          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">New Member Registration</h3>
-          <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
-            Fill out your details to join our parent community.
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;" data-i18n="form_card_title">Пријава за нови членови</h3>
+          <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;" data-i18n="form_card_subtitle">
+            Пополнете ги вашите податоци за да се приклучите на нашата родителска заедница.
           </p>
 
           <form id="memberForm" action="https://formsubmit.co/pejahs@gmail.com" method="POST">
@@ -326,39 +335,40 @@
             <input type="hidden" name="_captcha" value="false" />
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_next" value="https://majkatakata.com/#connect" />
+            
             <div class="form-group">
-              <label class="form-label" for="memberName">Parent's Full Name</label>
-              <input type="text" id="memberName" name="name" class="form-control" placeholder="e.g. Ana Galić" required />
+              <label class="form-label" for="memberName" data-i18n="form_label_name">Име и презиме на родител</label>
+              <input type="text" id="memberName" name="name" class="form-control" placeholder="пр. Ана Галиќ" data-i18n-placeholder="form_placeholder_name" required />
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="memberEmail">Email Address</label>
-              <input type="email" id="memberEmail" name="email" class="form-control" placeholder="name@example.com" required />
+              <label class="form-label" for="memberEmail" data-i18n="form_label_email">Е-пошта (Email)</label>
+              <input type="email" id="memberEmail" name="email" class="form-control" placeholder="ime@example.com" data-i18n-placeholder="form_placeholder_email" required />
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="babyAge">Baby's Current Age / Stage</label>
+              <label class="form-label" for="babyAge" data-i18n="form_label_age">Возраст / фаза на бебето</label>
               <select id="babyAge" name="baby_age" class="form-control">
-                <option value="Expecting">Expecting (Pregnant)</option>
-                <option value="0-5 months">0 - 5 months (Preparing for BLW)</option>
-                <option value="6-9 months">6 - 9 months (Starting Solids)</option>
-                <option value="10-12 months">10 - 12 months (Exploring Textures)</option>
-                <option value="12+ months">12+ months (Toddler Eating)</option>
+                <option value="Expecting" data-i18n="opt_expecting">Бременост (Очекуваме бебе)</option>
+                <option value="0-5 months" data-i18n="opt_0_5">0 - 5 месеци (Подготовка за BLW)</option>
+                <option value="6-9 months" data-i18n="opt_6_9">6 - 9 месеци (Започнување со цврста храна)</option>
+                <option value="10-12 months" data-i18n="opt_10_12">10 - 12 месеци (Истражување текстури)</option>
+                <option value="12+ months" data-i18n="opt_12_plus">12+ месеци (Исхрана на мало дете)</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="memberMessage">Questions or Notes (Optional)</label>
-              <textarea id="memberMessage" name="message" class="form-control" placeholder="Tell me about your baby or any specific questions..."></textarea>
+              <label class="form-label" for="memberMessage" data-i18n="form_label_msg">Прашања или белешки (Опционално)</label>
+              <textarea id="memberMessage" name="message" class="form-control" placeholder="Кажете ни нешто за вашето бебе..." data-i18n-placeholder="form_placeholder_msg"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%;">
-              Register Interest & Sign Up
+            <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="form_btn_submit">
+              Пријави се за обука
             </button>
           </form>
 
           <div class="form-success-message" id="formSuccess">
-            🎉 Thank you for signing up! Your registration has been received. Katerina will be in touch with upcoming workshop details.
+            🎉 Ви благодариме за пријавата! Вашите податоци се успешно испратени. Катерина ќе ве контактира набрзо.
           </div>
         </div>
       </div>
@@ -371,39 +381,41 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <h3>majkatakata</h3>
-          <p>Helping babies grow with confidence, one bite at a time. Evidence-informed Baby-Led Weaning guidance for parents.</p>
+          <p data-i18n="footer_desc">Помагаме на бебињата да растат со самодоверба, загриз по загриз. Научно поддржани совети за Baby-Led Weaning.</p>
         </div>
 
         <div class="footer-links">
-          <h4>Navigation</h4>
+          <h4 data-i18n="footer_nav_title">Навигација</h4>
           <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Katerina</a></li>
-            <li><a href="#why">Why BLW</a></li>
-            <li><a href="#instagram">Instagram</a></li>
-            <li><a href="#connect">Sign Up</a></li>
+            <li><a href="#home" data-i18n="footer_home">Почетна</a></li>
+            <li><a href="#about" data-i18n="footer_about">За Катерина</a></li>
+            <li><a href="#why" data-i18n="footer_why">Зошто BLW</a></li>
+            <li><a href="#instagram" data-i18n="footer_ig">Инстаграм</a></li>
+            <li><a href="#connect" data-i18n="footer_signup">Пријава</a></li>
           </ul>
         </div>
 
         <div class="footer-links">
-          <h4>Credentials</h4>
+          <h4 data-i18n="footer_cred_title">Сертификати</h4>
           <ul>
-            <li>Certified BLW Instructor 📖</li>
-            <li>Solid Starts PRO Certified 📝</li>
-            <li>Online Parent Workshops 💻</li>
+            <li>Сертифициран BLW Инструктор 📖</li>
+            <li>Solid Starts PRO Сертифицирана 📝</li>
+            <li>Онлајн обука за родители 💻</li>
           </ul>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© <span id="year"></span> majkatakata • All rights reserved.</p>
-        <p><a href="#home" style="color: inherit;">Back to Top ↑</a></p>
+        <p>© <span id="year"></span> <span data-i18n="footer_rights">majkatakata • Сите права се задржани.</span></p>
+        <p><a href="#home" style="color: inherit;" data-i18n="footer_back_top">Назад на врв ↑</a></p>
       </div>
     </div>
   </footer>
 
   <!-- Instagram embed script -->
   <script async src="https://www.instagram.com/embed.js"></script>
+  <!-- i18n Dictionary Script -->
+  <script src="js/i18n.js"></script>
   <!-- Custom JS -->
   <script src="js/script.js"></script>
 </body>

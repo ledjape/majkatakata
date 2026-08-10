@@ -1,9 +1,57 @@
 /* ==========================================================================
-   majkatakata.com - Interactive Logic & UI Handler
+   majkatakata.com - Interactive Logic & Localization (i18n) Handler
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Mobile Navigation Toggle
+  // 1. Language Switcher (Primary: Macedonian 'mk', Secondary: English 'en')
+  let currentLang = localStorage.getItem('majkatakata_lang') || 'mk';
+
+  function applyLanguage(lang) {
+    if (!translations[lang]) return;
+    currentLang = lang;
+    localStorage.setItem('majkatakata_lang', lang);
+    document.documentElement.lang = lang;
+
+    const dict = translations[lang];
+
+    // Update innerHTML / textContent for data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (dict[key] !== undefined) {
+        el.innerHTML = dict[key];
+      }
+    });
+
+    // Update placeholders for data-i18n-placeholder
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key] !== undefined) {
+        el.setAttribute('placeholder', dict[key]);
+      }
+    });
+
+    // Update language toggle buttons active state
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      if (btn.getAttribute('data-lang') === lang) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+  }
+
+  // Initialize Language
+  applyLanguage(currentLang);
+
+  // Language Switcher Toggle Click Listener
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.getAttribute('data-lang');
+      applyLanguage(lang);
+    });
+  });
+
+  // 2. Mobile Navigation Toggle
   const mobileToggle = document.getElementById('mobileToggle');
   const navLinks = document.getElementById('navLinks');
 
@@ -24,7 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 2. Accordion Handler for Concerns Section
+  // 3. Accordion Handler for Concerns Section
   const accordionItems = document.querySelectorAll('.accordion-item');
 
   accordionItems.forEach(item => {
@@ -42,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Member Sign-In / Contact Form Async Submission to pejahs@gmail.com via FormSubmit
+  // 4. Member Sign-In / Contact Form Async Submission via FormSubmit
   const memberForm = document.getElementById('memberForm');
   const formSuccess = document.getElementById('formSuccess');
 
@@ -55,17 +103,16 @@ document.addEventListener('DOMContentLoaded', () => {
       const submitBtn = memberForm.querySelector('button[type="submit"]');
 
       if (!name || !email) {
-        alert('Please fill in your name and email address.');
+        alert(currentLang === 'mk' ? 'Ве молиме внесете ги вашето име и е-пошта.' : 'Please fill in your name and email address.');
         return;
       }
 
       const originalText = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '⏳ Submitting...';
+      submitBtn.innerHTML = currentLang === 'mk' ? '⏳ Се испраќа...' : '⏳ Submitting...';
 
       try {
         const formData = new FormData(memberForm);
-        // FormSubmit AJAX endpoint
         const ajaxUrl = memberForm.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
         const response = await fetch(ajaxUrl, {
           method: 'POST',
@@ -81,34 +128,34 @@ document.addEventListener('DOMContentLoaded', () => {
           memberForm.reset();
           submitBtn.style.display = 'none';
           if (formSuccess) {
-            formSuccess.innerHTML = '🎉 Thank you for signing up! Your registration has been sent to pejahs@gmail.com.';
+            formSuccess.innerHTML = currentLang === 'mk'
+              ? '🎉 Ви благодариме за пријавата! Вашите податоци се успешно испратени до Катерина.'
+              : '🎉 Thank you for signing up! Your registration has been sent to Katerina.';
             formSuccess.style.display = 'block';
             formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
         } else if (result.message && result.message.includes('Activate')) {
           submitBtn.style.display = 'none';
           if (formSuccess) {
-            formSuccess.innerHTML = '🎉 Form submitted! Please check pejahs@gmail.com inbox to click the 1-time activation link from FormSubmit.';
+            formSuccess.innerHTML = '🎉 Form submitted! Please check inbox to confirm activation.';
             formSuccess.style.display = 'block';
           }
         } else {
-          // Standard HTML submit fallback
           memberForm.submit();
         }
       } catch (err) {
-        // Fallback submit
         memberForm.submit();
       }
     });
   }
 
-  // 4. Dynamic Year in Footer
+  // 5. Dynamic Year in Footer
   const yearEl = document.getElementById('year');
   if (yearEl) {
     yearEl.textContent = new Date().getFullYear();
   }
 
-  // 5. Scroll Header Shadow Effect
+  // 6. Scroll Header Shadow Effect
   const header = document.querySelector('.site-header');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 20) {
