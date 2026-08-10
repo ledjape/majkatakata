@@ -190,7 +190,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 90px;
 }
 
 .logo-link {
@@ -201,18 +201,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-link:hover {
-  transform: scale(1.02);
+  transform: scale(1.03);
 }
 
 .navbar-logo-img {
-  height: 48px;
+  height: 64px;
   width: auto;
   display: block;
 }
 
 @media (max-width: 768px) {
   .navbar-logo-img {
-    height: 44px;
+    height: 52px;
   }
 }
 
