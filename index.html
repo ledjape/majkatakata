@@ -2,108 +2,240 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>majkatakata</title>
-  <meta name="description" content="Baby Led Weaning with Katerina – Helping Babies Grow with Confidence, One Bite at a Time" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Baby Led Weaning with Katerina | majkatakata</title>
+  <meta name="description" content="Helping babies grow with confidence, one bite at a time. Certified Baby-Led Weaning (BLW) instructor offering parent workshops and guidance." />
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://majkatakata.com/" />
+  <meta property="og:title" content="Baby Led Weaning with Katerina | majkatakata" />
+  <meta property="og:description" content="A simple, joyful, and evidence-informed approach to introducing real food—led by your baby." />
+  <meta property="og:image" content="https://majkatakata.com/resources/img/kate_1.jpg" />
 
-  <!-- Pico.css (v1.x, as in your project) -->
-  <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css" />
-
-  <style>
-    :root { scroll-behavior: smooth; }
-    header.hero { padding: 6rem 0 4rem; background: linear-gradient(180deg, #f9fbff 0%, #ffffff 100%); }
-    .tagline { font-size: clamp(1.4rem, 2.5vw + 1rem, 2.2rem); line-height: 1.25; margin-bottom: 1rem; }
-    .subtle { color: var(--muted-color); }
-    .section { padding: 3rem 0; }
-    .pill { display: inline-block; padding:.4rem .8rem; border-radius:999px; background: var(--muted-border-color); color: var(--muted-color); font-size:.9rem; }
-    footer.site { border-top: 1px solid var(--muted-border-color); padding: 2rem 0 3rem; color: var(--muted-color); }
-
-    /* Instagram carousel */
-    .ig-wrap { margin-top: 1rem; }
-    .ig-scroller {
-      display: grid;
-      grid-auto-flow: column;
-      grid-auto-columns: min(90%, 360px);
-      gap: 1rem;
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      padding-bottom: .5rem;
-    }
-    .ig-card {
-      scroll-snap-align: start;
-      border: 1px solid var(--muted-border-color);
-      border-radius: 12px;
-      padding: .5rem;
-      background: #fff;
-    }
-
-    /* Small helpers */
-    .btn-row a { margin-right: .5rem; }
-    img.hero-img { border-radius: 12px; margin-bottom: 1rem; width: 100%; height: auto; }
-  </style>
+  <!-- Fonts & Custom Styles -->
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <header class="hero">
-    <nav class="container">
-      <ul>
-        <li><strong>majkatakata</strong></li>
-      </ul>
-      <ul>
-        <li><a href="#about">About me</a></li>
+
+  <!-- Site Header & Navigation -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="#home" class="logo">
+        <span class="logo-heart">♥</span> majkatakata
+      </a>
+      
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About Me</a></li>
         <li><a href="#why">Why BLW</a></li>
         <li><a href="#instagram">Instagram</a></li>
-        <li><a href="#connect">Connect</a></li>
+        <li><a href="#connect" class="btn btn-primary" style="padding: 0.5rem 1.25rem; font-size: 0.9rem;">Join Community</a></li>
       </ul>
-    </nav>
-
-    <section class="container" id="home">
-      <!-- Image on top -->
-      <img class="hero-img" src="resources/img/kate_1.jpg" alt="Baby Led Weaning with Katerina">
-
-      <!-- Text below image -->
-      <span class="pill">Welcome</span>
-      <h1 class="tagline">
-        Baby Led Weaning with Katerina – Helping Babies Grow with Confidence, One Bite at a Time
-      </h1>
-      <p class="subtle">
-        A simple, joyful, and evidence-informed approach to introducing real food—led by your baby.
-      </p>
-      <p class="btn-row">
-        <a href="#about" role="button">Learn more</a>
-        <a href="https://instagram.com/majkatakata" target="_blank" rel="noopener" class="secondary">@majkatakata</a>
-      </p>
-    </section>
+    </div>
   </header>
 
   <main>
-    <section id="about" class="section container">
-      <h2>Welcome to BLW with Katerina</h2>
-      <p>Hello and welcome! My name is <strong>Katerina Galić</strong>, and I am a certified instructor for complementary feeding of newborns according to the <strong>Baby Led Weaning (BLW)</strong> method. Through this space, I share knowledge, guidance, and everyday inspiration to support parents who are curious about this beautiful, natural way of introducing food to their little ones.</p>
-      <p>The BLW approach is more than just a feeding method—it is a philosophy that encourages babies to discover food on their own, at their own pace. It respects their independence, instincts, and natural curiosity. With BLW, babies learn to pick up food, bring it to their mouths, and explore different tastes, textures, and colors, all while building important motor skills and confidence.</p>
-      <p>In recent years, images of tiny babies holding big pieces of food have become common on social media. Yet here, in our community, BLW is still a relatively new practice. Many parents approach it with curiosity, but also with questions, doubts, and even fears. My mission is to offer clear, practical, and evidence-based answers—while encouraging parents to trust their children’s natural abilities.</p>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="badge">
+            <span>✨</span> Welcome to majkatakata
+          </span>
+          <h1 class="hero-title">
+            Baby Led Weaning with Katerina – <span>Helping Babies Grow with Confidence</span>
+          </h1>
+          <p class="hero-subtitle">
+            A simple, joyful, and evidence-informed approach to introducing real food—led by your baby, one bite at a time.
+          </p>
+          <div class="btn-group">
+            <a href="#connect" class="btn btn-primary">
+              Join Next Workshop
+            </a>
+            <a href="https://instagram.com/majkatakata" target="_blank" rel="noopener" class="btn btn-secondary">
+              <span>📷</span> @majkatakata
+            </a>
+          </div>
+          
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3>BLW Pro</h3>
+              <p>Certified Instructor</p>
+            </div>
+            <div class="stat-item">
+              <h3>100%</h3>
+              <p>Evidence-Informed</p>
+            </div>
+            <div class="stat-item">
+              <h3>Solid Starts</h3>
+              <p>PRO Certified</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-wrapper">
+          <div class="hero-img-card">
+            <img class="hero-img" src="resources/img/kate_1.jpg" alt="Baby Led Weaning with Katerina Galić" />
+          </div>
+          <div class="hero-floating-badge">
+            <div class="floating-icon">👶</div>
+            <div>
+              <strong style="display:block; font-size:0.95rem; color:var(--color-text-main);">Katerina Galić</strong>
+              <small style="color:var(--color-text-muted);">Certified BLW Specialist</small>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="why" class="section container">
-      <h2>Why BLW?</h2>
-      <ul>
-        <li><strong>Confidence &amp; independence:</strong> Babies lead the process, making mealtimes fun and empowering.</li>
-        <li><strong>Family connection:</strong> They sit at the table with everyone else, sharing the same food in an age-appropriate way.</li>
-        <li><strong>Healthy habits:</strong> Without distractions like screens, babies learn to listen to their bodies and enjoy real food.</li>
-        <li><strong>Developmental benefits:</strong> From hand–eye coordination to chewing skills, BLW strengthens essential abilities while keeping feeding joyful.</li>
-      </ul>
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-secondary">About Katerina</span>
+          <h2>Empowering Parents to Trust Their Baby’s Instincts</h2>
+        </div>
 
-      <h3>Addressing Common Concerns</h3>
-      <p>Many parents worry about choking or the messiness of self-feeding. Research shows that babies following BLW are not at higher risk of choking compared to spoon-fed babies. What’s important is following safety guidelines, preparing food correctly, and creating a calm environment for meals. The “mess” may seem overwhelming at first—but it’s a vital part of learning. Every squish, spill, and smile is a step toward growth.</p>
+        <div class="about-grid">
+          <div class="about-card">
+            <p>
+              Hello and welcome! My name is <strong>Katerina Galić</strong>, and I am a certified instructor for complementary feeding of newborns according to the <strong>Baby Led Weaning (BLW)</strong> method.
+            </p>
+            <p>
+              The BLW approach is more than just a feeding method—it is a philosophy that encourages babies to discover food on their own, at their own pace. It respects their independence, instincts, and natural curiosity.
+            </p>
+            <p>
+              In recent years, pictures of tiny babies holding big pieces of food have flooded social media. Yet in our local community, BLW is still a fresh concept that brings questions, doubts, and worries. My mission is to offer clear, practical, and evidence-based guidance while supporting parents every step of the way.
+            </p>
+            <div class="credential-tags">
+              <span class="credential-tag">📖 Certified BLW Instructor</span>
+              <span class="credential-tag">📝 Solid Starts PRO Certified</span>
+              <span class="credential-tag">💻 Online Parent Training</span>
+            </div>
+          </div>
+
+          <div style="background: var(--color-primary-soft); padding: 2.5rem; border-radius: var(--radius-lg); border: 1px solid rgba(217, 119, 87, 0.2);">
+            <h3 style="color: var(--color-primary); margin-bottom: 1rem; font-size: 1.5rem;">Our Core Philosophy</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 1.25rem;">
+              <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                <span style="background: var(--color-surface); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--color-primary); flex-shrink: 0;">1</span>
+                <div>
+                  <strong>Respect Baby's Autonomy</strong>
+                  <p style="font-size: 0.9rem; color: var(--color-text-muted);">Letting infants explore textures and learn self-regulation naturally.</p>
+                </div>
+              </li>
+              <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                <span style="background: var(--color-surface); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--color-primary); flex-shrink: 0;">2</span>
+                <div>
+                  <strong>Shared Family Mealtimes</strong>
+                  <p style="font-size: 0.9rem; color: var(--color-text-muted);">Eating together builds social connection and healthy habits early on.</p>
+                </div>
+              </li>
+              <li style="display: flex; gap: 0.75rem; align-items: flex-start;">
+                <span style="background: var(--color-surface); width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--color-primary); flex-shrink: 0;">3</span>
+                <div>
+                  <strong>Safety First Guidance</strong>
+                  <p style="font-size: 0.9rem; color: var(--color-text-muted);">Equipping parents with clear CPR, preparation, and choking-prevention rules.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Instagram Carousel -->
-    <section id="instagram" class="section container">
-      <h2>Instagram</h2>
-      <p class="subtle">Swipe through recent posts. Tap a card to open it on Instagram. Prefer video? Check out the <a href="https://www.instagram.com/majkatakata/reels/" target="_blank" rel="noopener"><strong>Reels</strong></a>.</p>
+    <!-- Why BLW Section -->
+    <section id="why" class="section" style="background: var(--color-surface); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge">The Benefits</span>
+          <h2>Why Choose Baby-Led Weaning?</h2>
+          <p>Discover how self-feeding nurtures growth, motor skills, and mealtime joy.</p>
+        </div>
 
-      <div class="ig-wrap">
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🌱</div>
+            <h3>Confidence & Independence</h3>
+            <p>Babies lead the feeding process, making mealtimes empowering, stress-free, and fun.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">👨‍👩‍👧</div>
+            <h3>Family Connection</h3>
+            <p>Babies sit at the family table, sharing real meals adapted to their age and development.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">🥑</div>
+            <h3>Healthy Eating Habits</h3>
+            <p>Without screens or forced feeding, infants tune into satiety cues and enjoy diverse foods.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💡</div>
+            <h3>Motor Skill Development</h3>
+            <p>Develops hand-eye coordination, pincer grasp, and chewing capabilities naturally.</p>
+          </div>
+        </div>
+
+        <!-- Addressing Concerns Accordion -->
+        <div class="concerns-box">
+          <h3 style="margin-bottom: 1.5rem; text-align: center;">Addressing Common Parent Concerns</h3>
+          
+          <div class="accordion-item active">
+            <button class="accordion-header">
+              <span>Is my baby at higher risk of choking with BLW?</span>
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Research demonstrates that babies starting BLW are not at higher risk of choking compared to traditional spoon-fed infants. What matters most is following proper food preparation rules (size, texture, shape) and ensuring your baby sits upright in an un-reclined high chair.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>How do I manage the mess during self-feeding?</span>
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Mess is a vital sensory milestone! Touching, squeezing, and exploring food helps babies feel comfortable with textures. Using splash mats, long-sleeved bibs, and maintaining a relaxed mindset turns mealtime into joyful learning.
+              </p>
+            </div>
+          </div>
+
+          <div class="accordion-item">
+            <button class="accordion-header">
+              <span>When is the right time to start BLW?</span>
+              <span class="accordion-icon">▼</span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Most babies show readiness around 6 months when they can sit unsupported, have good neck control, and demonstrate curiosity about food while reaching out to grasp items.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Instagram Feed Section -->
+    <section id="instagram" class="section instagram-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge-secondary">Community Inspiration</span>
+          <h2>Follow Along on Instagram</h2>
+          <p>Everyday meals, recipe ideas, and real-life BLW tips shared with parents.</p>
+        </div>
+
         <div class="ig-scroller" aria-label="Instagram posts carousel">
-          <!-- Post 1 -->
           <article class="ig-card">
             <blockquote class="instagram-media"
               data-instgrm-permalink="https://www.instagram.com/majkatakata/p/C4IRT5ONbo3/?hl=en"
@@ -111,7 +243,6 @@
             </blockquote>
           </article>
 
-          <!-- Post 2 -->
           <article class="ig-card">
             <blockquote class="instagram-media"
               data-instgrm-permalink="https://www.instagram.com/majkatakata/p/CL33DVYLHHU/?hl=en"
@@ -119,7 +250,6 @@
             </blockquote>
           </article>
 
-          <!-- Post 3 -->
           <article class="ig-card">
             <blockquote class="instagram-media"
               data-instgrm-permalink="https://www.instagram.com/majkatakata/p/CLjg9W9LCFc/?hl=en"
@@ -127,51 +257,136 @@
             </blockquote>
           </article>
         </div>
-      </div>
 
-      <p class="btn-row" style="margin-top:1rem;">
-        <a href="https://www.instagram.com/majkatakata/" target="_blank" rel="noopener" role="button" class="secondary">
-          View on Instagram
-        </a>
-        <a href="https://www.instagram.com/majkatakata/reels/" target="_blank" rel="noopener" role="button">
-          Watch Reels
-        </a>
-      </p>
+        <div class="btn-group" style="justify-content: center; margin-top: 2rem;">
+          <a href="https://www.instagram.com/majkatakata/" target="_blank" rel="noopener" class="btn btn-secondary">
+            View Instagram Profile
+          </a>
+          <a href="https://www.instagram.com/majkatakata/reels/" target="_blank" rel="noopener" class="btn btn-primary">
+            Watch BLW Video Reels
+          </a>
+        </div>
+      </div>
     </section>
 
-    <!-- Connect / Google Form -->
-    <section id="connect" class="section container">
-      <h2>Connect</h2>
-      <p>Ready to start or level up your BLW journey? Register your interest and I’ll be in touch with upcoming dates and details.</p>
-      <p>
-        <a href="https://shorturl.at/GhdGw" target="_blank" rel="noopener" role="button">Sign up for training</a>
-      </p>
-      <p class="subtle">Prefer Instagram DMs? Reach me at <a href="https://instagram.com/majkatakata" target="_blank" rel="noopener">@majkatakata</a>.</p>
+    <!-- Member Contact & Sign-In Form Section -->
+    <section id="connect" class="section contact-section">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <span class="badge">Join Next Session</span>
+          <h2>Connect & Sign Up for Training</h2>
+          <p>
+            Ready to start or level up your BLW journey? Register your interest below and I’ll send you upcoming workshop dates, guides, and details.
+          </p>
+
+          <div class="contact-method">
+            <div class="contact-icon">📧</div>
+            <div>
+              <strong>Instagram Direct Messages</strong>
+              <p style="font-size:0.9rem; color:var(--color-text-muted);">
+                <a href="https://instagram.com/majkatakata" target="_blank" rel="noopener">@majkatakata</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-method">
+            <div class="contact-icon">🌐</div>
+            <div>
+              <strong>Official Sign-Up Link</strong>
+              <p style="font-size:0.9rem; color:var(--color-text-muted);">
+                <a href="https://shorturl.at/GhdGw" target="_blank" rel="noopener">Open Google Registration Form</a>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form Card -->
+        <div class="contact-form-card">
+          <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem;">New Member Registration</h3>
+          <p style="color: var(--color-text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+            Fill out your details to join our parent community.
+          </p>
+
+          <form id="memberForm">
+            <div class="form-group">
+              <label class="form-label" for="memberName">Parent's Full Name</label>
+              <input type="text" id="memberName" class="form-control" placeholder="e.g. Ana Galić" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="memberEmail">Email Address</label>
+              <input type="email" id="memberEmail" class="form-control" placeholder="name@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="babyAge">Baby's Current Age / Stage</label>
+              <select id="babyAge" class="form-control">
+                <option value="Expecting">Expecting (Pregnant)</option>
+                <option value="0-5 months">0 - 5 months (Preparing for BLW)</option>
+                <option value="6-9 months">6 - 9 months (Starting Solids)</option>
+                <option value="10-12 months">10 - 12 months (Exploring Textures)</option>
+                <option value="12+ months">12+ months (Toddler Eating)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="memberMessage">Questions or Notes (Optional)</label>
+              <textarea id="memberMessage" class="form-control" placeholder="Tell me about your baby or any specific questions..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Register Interest & Sign Up
+            </button>
+          </form>
+
+          <div class="form-success-message" id="formSuccess">
+            🎉 Thank you for signing up! Your registration has been received. Katerina will be in touch with upcoming workshop details.
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site container">
-    <article>
-      <header><strong>Credentials</strong></header>
-      <ul>
-        <li>Certified instructor for <em>Baby Led Weaning</em> method of feeding 📖</li>
-        <li>Online training for parents 💻</li>
-        <li>Solid Starts PRO Certified 📝</li>
-        <li>Certified BLW instructor</li>
-      </ul>
-      <footer>
-        <small>© <span id="year"></span> BLW with Katerina • Helping babies grow with confidence, one bite at a time.</small>
-      </footer>
-    </article>
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>majkatakata</h3>
+          <p>Helping babies grow with confidence, one bite at a time. Evidence-informed Baby-Led Weaning guidance for parents.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Katerina</a></li>
+            <li><a href="#why">Why BLW</a></li>
+            <li><a href="#instagram">Instagram</a></li>
+            <li><a href="#connect">Sign Up</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Credentials</h4>
+          <ul>
+            <li>Certified BLW Instructor 📖</li>
+            <li>Solid Starts PRO Certified 📝</li>
+            <li>Online Parent Workshops 💻</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> majkatakata • All rights reserved.</p>
+        <p><a href="#home" style="color: inherit;">Back to Top ↑</a></p>
+      </div>
+    </div>
   </footer>
 
   <!-- Instagram embed script -->
-  <script async src="//www.instagram.com/embed.js"></script>
-
-  <script>
-    // current year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script async src="https://www.instagram.com/embed.js"></script>
+  <!-- Custom JS -->
+  <script src="js/script.js"></script>
 </body>
 </html>
