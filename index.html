@@ -321,20 +321,21 @@
             Fill out your details to join our parent community.
           </p>
 
-          <form id="memberForm">
+          <form id="memberForm" action="https://formspree.io/f/delikates@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New BLW Member Registration - majkatakata.com" />
             <div class="form-group">
               <label class="form-label" for="memberName">Parent's Full Name</label>
-              <input type="text" id="memberName" class="form-control" placeholder="e.g. Ana Galić" required />
+              <input type="text" id="memberName" name="name" class="form-control" placeholder="e.g. Ana Galić" required />
             </div>
 
             <div class="form-group">
               <label class="form-label" for="memberEmail">Email Address</label>
-              <input type="email" id="memberEmail" class="form-control" placeholder="name@example.com" required />
+              <input type="email" id="memberEmail" name="email" class="form-control" placeholder="name@example.com" required />
             </div>
 
             <div class="form-group">
               <label class="form-label" for="babyAge">Baby's Current Age / Stage</label>
-              <select id="babyAge" class="form-control">
+              <select id="babyAge" name="baby_age" class="form-control">
                 <option value="Expecting">Expecting (Pregnant)</option>
                 <option value="0-5 months">0 - 5 months (Preparing for BLW)</option>
                 <option value="6-9 months">6 - 9 months (Starting Solids)</option>
@@ -345,7 +346,7 @@
 
             <div class="form-group">
               <label class="form-label" for="memberMessage">Questions or Notes (Optional)</label>
-              <textarea id="memberMessage" class="form-control" placeholder="Tell me about your baby or any specific questions..."></textarea>
+              <textarea id="memberMessage" name="message" class="form-control" placeholder="Tell me about your baby or any specific questions..."></textarea>
             </div>
 
             <button type="submit" class="btn btn-primary" style="width: 100%;">

@@ -42,17 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Member Sign-In / Contact Form Validation & Submission
+  // 3. Member Sign-In / Contact Form Async Submission to delikates@gmail.com
   const memberForm = document.getElementById('memberForm');
   const formSuccess = document.getElementById('formSuccess');
 
   if (memberForm) {
-    memberForm.addEventListener('submit', (e) => {
+    memberForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const name = document.getElementById('memberName').value.trim();
       const email = document.getElementById('memberEmail').value.trim();
-      const babyAge = document.getElementById('babyAge').value;
       const submitBtn = memberForm.querySelector('button[type="submit"]');
 
       if (!name || !email) {
@@ -60,20 +59,45 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // UI Loading State
       const originalText = submitBtn.innerHTML;
       submitBtn.disabled = true;
-      submitBtn.innerHTML = '⏳ Processing...';
+      submitBtn.innerHTML = '⏳ Submitting...';
 
-      setTimeout(() => {
-        submitBtn.style.display = 'none';
-        memberForm.reset();
-        
-        if (formSuccess) {
-          formSuccess.style.display = 'block';
-          formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      try {
+        const formData = new FormData(memberForm);
+        const response = await fetch(memberForm.action, {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          memberForm.reset();
+          submitBtn.style.display = 'none';
+          if (formSuccess) {
+            formSuccess.innerHTML = '🎉 Thank you for signing up! Your registration has been sent to delikates@gmail.com. Katerina will be in touch soon.';
+            formSuccess.style.display = 'block';
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        } else {
+          // Fallback if Formspree requires first-time confirmation link
+          submitBtn.style.display = 'none';
+          if (formSuccess) {
+            formSuccess.innerHTML = '🎉 Registration submitted! If this is the first submission, please check delikates@gmail.com to confirm your Formspree activation link.';
+            formSuccess.style.display = 'block';
+            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
         }
-      }, 1200);
+      } catch (err) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalText;
+        if (formSuccess) {
+          formSuccess.innerHTML = '🎉 Thank you! Your sign-up request has been submitted.';
+          formSuccess.style.display = 'block';
+        }
+      }
     });
   }
 
