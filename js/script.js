@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 3. Member Sign-In / Contact Form Async Submission to delikates@gmail.com
+  // 3. Member Sign-In / Contact Form Async Submission to pejahs@gmail.com via FormSubmit
   const memberForm = document.getElementById('memberForm');
   const formSuccess = document.getElementById('formSuccess');
 
@@ -65,7 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       try {
         const formData = new FormData(memberForm);
-        const response = await fetch(memberForm.action, {
+        // FormSubmit AJAX endpoint
+        const ajaxUrl = memberForm.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+        const response = await fetch(ajaxUrl, {
           method: 'POST',
           body: formData,
           headers: {
@@ -73,30 +75,29 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
 
-        if (response.ok) {
+        const result = await response.json().catch(() => ({}));
+
+        if (response.ok || result.success === "true" || result.success === true) {
           memberForm.reset();
           submitBtn.style.display = 'none';
           if (formSuccess) {
-            formSuccess.innerHTML = '🎉 Thank you for signing up! Your registration has been sent to delikates@gmail.com. Katerina will be in touch soon.';
+            formSuccess.innerHTML = '🎉 Thank you for signing up! Your registration has been sent to pejahs@gmail.com.';
             formSuccess.style.display = 'block';
             formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
-        } else {
-          // Fallback if Formspree requires first-time confirmation link
+        } else if (result.message && result.message.includes('Activate')) {
           submitBtn.style.display = 'none';
           if (formSuccess) {
-            formSuccess.innerHTML = '🎉 Registration submitted! If this is the first submission, please check delikates@gmail.com to confirm your Formspree activation link.';
+            formSuccess.innerHTML = '🎉 Form submitted! Please check pejahs@gmail.com inbox to click the 1-time activation link from FormSubmit.';
             formSuccess.style.display = 'block';
-            formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
           }
+        } else {
+          // Standard HTML submit fallback
+          memberForm.submit();
         }
       } catch (err) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalText;
-        if (formSuccess) {
-          formSuccess.innerHTML = '🎉 Thank you! Your sign-up request has been submitted.';
-          formSuccess.style.display = 'block';
-        }
+        // Fallback submit
+        memberForm.submit();
       }
     });
   }
