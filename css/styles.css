@@ -193,18 +193,27 @@ h1, h2, h3, h4, h5, h6 {
   height: 80px;
 }
 
-.logo {
+.logo-link {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 700;
-  color: var(--color-text-main);
+  text-decoration: none;
+  transition: transform var(--transition-fast);
 }
 
-.logo-heart {
-  color: var(--color-primary);
+.logo-link:hover {
+  transform: scale(1.02);
+}
+
+.navbar-logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .navbar-logo-img {
+    height: 44px;
+  }
 }
 
 .nav-links {
