@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>majkatakata - Professional Local Logo Suite</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600&display=swap');
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      background: #F8F4F0;
+      color: #2D2623;
+      padding: 3rem 1.5rem;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.5rem;
+      color: #D97757;
+      margin-bottom: 0.5rem;
+    }
+
+    p.subtitle {
+      color: #6B615B;
+      font-size: 1.1rem;
+    }
+
+    .badge-privacy {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #F9EBE6;
+      color: #D97757;
+      padding: 0.5rem 1.25rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-top: 1rem;
+      border: 1px solid rgba(217, 119, 87, 0.2);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: #FFFFFF;
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(45, 38, 35, 0.06);
+      border: 1px solid #EFE6DD;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(45, 38, 35, 0.1);
+    }
+
+    .card-dark {
+      background: #1A1A1A;
+      border-color: #333333;
+      color: #FFFFFF;
+    }
+
+    .card-dark h3 {
+      color: #FFFFFF !important;
+    }
+
+    .card-dark p {
+      color: #AAAAAA !important;
+    }
+
+    .svg-wrapper {
+      width: 240px;
+      height: 240px;
+      margin-bottom: 1.5rem;
+    }
+
+    .svg-wrapper-wide {
+      width: 100%;
+      height: 140px;
+    }
+
+    h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      margin-bottom: 0.4rem;
+      color: #2D2623;
+    }
+
+    p.card-desc {
+      font-size: 0.9rem;
+      color: #6B615B;
+      margin-bottom: 1.25rem;
+    }
+
+    .file-tag {
+      font-family: monospace;
+      background: #F2EBE4;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: #D97757;
+      font-weight: 600;
+    }
+
+    .card-dark .file-tag {
+      background: #333333;
+      color: #F5BC59;
+    }
+
+    .grid-wide {
+      grid-column: 1 / -1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>majkatakata Brand Logo Suite</h1>
+      <p class="subtitle">Official Vector SVG Logo Suite (Primary Color, Black & White Monochrome, and Horizontal)</p>
+      <div class="badge-privacy">
+        🔒 Private Local Suite — Excluded from Git (`logos_local/`)
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- 1. Primary Full-Color Badge -->
+      <div class="card">
+        <div class="svg-wrapper">
+          <img src="logo_color.svg" alt="Primary Full Color Logo" style="width: 100%; height: 100%;" />
+        </div>
+        <h3>Primary Full-Color Logo</h3>
+        <p class="card-desc">Terracotta & Sage palette with subtle translucent food splatters.</p>
+        <span class="file-tag">logo_color.svg</span>
+      </div>
+
+      <!-- 2. Black & White Monochrome Badge -->
+      <div class="card">
+        <div class="svg-wrapper">
+          <img src="logo_black_white.svg" alt="Monochrome Black & White Logo" style="width: 100%; height: 100%;" />
+        </div>
+        <h3>Black & White Monochrome</h3>
+        <p class="card-desc">High-contrast solid monochrome for print, stamps, and single-color media.</p>
+        <span class="file-tag">logo_black_white.svg</span>
+      </div>
+
+      <!-- 3. Horizontal Navbar Logo Variant -->
+      <div class="card grid-wide">
+        <div class="svg-wrapper-wide">
+          <img src="logo_horizontal_color.svg" alt="Horizontal Navbar Logo" style="width: 100%; height: 100%;" />
+        </div>
+        <h3>Horizontal Navbar Variant</h3>
+        <p class="card-desc">Side-by-side emblem + typography layout designed for website headers and email footers.</p>
+        <span class="file-tag">logo_horizontal_color.svg</span>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

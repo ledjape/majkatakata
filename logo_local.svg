@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Warm Terracotta Gradient -->
+    <linearGradient id="terracottaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E28666" />
+      <stop offset="100%" stop-color="#D97757" />
+    </linearGradient>
+
+    <!-- Calming Sage Accent Gradient -->
+    <linearGradient id="sageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5B846D" />
+      <stop offset="100%" stop-color="#4A705B" />
+    </linearGradient>
+
+    <!-- Soft Ambient Drop Shadow -->
+    <filter id="badgeShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#D97757" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Clean Solid Circle Badge Background -->
+  <circle cx="250" cy="250" r="215" fill="#FCF9F5" stroke="#D97757" stroke-width="4" filter="url(#badgeShadow)" />
+  <circle cx="250" cy="250" r="200" fill="none" stroke="#F4E6E1" stroke-width="2" />
+
+  <!-- Logo Emblem Group -->
+  <g transform="translate(0, 15)">
+    <!-- Soft Transparent "Messy" Food Splash & Dots (Subtle Opacity 0.25 - 0.45) -->
+    <!-- Terracotta Dots -->
+    <circle cx="330" cy="180" r="7" fill="#D97757" opacity="0.35" />
+    <circle cx="365" cy="150" r="5" fill="#D97757" opacity="0.40" />
+    <circle cx="388" cy="195" r="9" fill="#E28666" opacity="0.30" />
+    <circle cx="395" cy="235" r="6" fill="#D97757" opacity="0.25" />
+    <circle cx="382" cy="270" r="8" fill="#D97757" opacity="0.35" />
+    <circle cx="355" cy="295" r="5" fill="#E28666" opacity="0.40" />
+    <circle cx="115" cy="230" r="6" fill="#D97757" opacity="0.30" />
+    <circle cx="102" cy="265" r="8" fill="#D97757" opacity="0.25" />
+
+    <!-- Sage Green Food Dots -->
+    <circle cx="348" cy="130" r="8" fill="#4A705B" opacity="0.35" />
+    <circle cx="392" cy="168" r="4.5" fill="#5B846D" opacity="0.40" />
+    <circle cx="368" cy="285" r="7" fill="#4A705B" opacity="0.30" />
+    <circle cx="120" cy="185" r="5" fill="#4A705B" opacity="0.35" />
+
+    <!-- Warm Honey Gold Food Splatters -->
+    <circle cx="310" cy="148" r="5" fill="#E5A93C" opacity="0.40" />
+    <circle cx="378" cy="220" r="7.5" fill="#E5A93C" opacity="0.35" />
+    <circle cx="398" cy="255" r="4" fill="#F5BC59" opacity="0.45" />
+    <circle cx="340" cy="305" r="6" fill="#E5A93C" opacity="0.30" />
+    <circle cx="140" cy="155" r="6" fill="#E5A93C" opacity="0.35" />
+
+    <!-- Playful Soft Splatter Drops -->
+    <path d="M 376 132 C 379 128, 383 130, 381 135 C 379 140, 373 136, 376 132 Z" fill="#E5A93C" opacity="0.40" />
+    <path d="M 108 200 C 112 195, 116 198, 113 204 C 110 209, 105 204, 108 200 Z" fill="#D97757" opacity="0.35" />
+
+    <!-- Small Leaf / Heart Icon above 'M' -->
+    <path d="M 250 85
+             C 240 68, 220 68, 220 84
+             C 220 100, 250 122, 250 122
+             C 250 122, 280 100, 280 84
+             C 280 68, 260 68, 250 85 Z"
+          fill="url(#sageGrad)" />
+
+    <!-- Clean, Bold Letter 'M' (Stands out clearly) -->
+    <path d="M 130 285
+             C 130 185, 165 135, 202 135
+             C 232 135, 243 175, 250 198
+             C 257 175, 268 135, 298 135
+             C 335 135, 370 185, 370 285"
+          fill="none"
+          stroke="url(#terracottaGrad)"
+          stroke-width="28"
+          stroke-linecap="round"
+          stroke-linejoin="round" />
+  </g>
+
+  <!-- Clean Brand Title Typography -->
+  <text x="250" y="388"
+        font-family="'Outfit', 'Plus Jakarta Sans', -apple-system, sans-serif"
+        font-size="34"
+        font-weight="700"
+        fill="#2D2623"
+        text-anchor="middle"
+        letter-spacing="0.5">majkatakata</text>
+
+  <!-- Subtitle Tagline -->
+  <text x="250" y="416"
+        font-family="'Plus Jakarta Sans', -apple-system, sans-serif"
+        font-size="13"
+        font-weight="600"
+        fill="#6B615B"
+        text-anchor="middle"
+        letter-spacing="2.5">BABY-LED WEANING</text>
+</svg>

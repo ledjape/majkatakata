@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+  <defs>
+    <!-- Terracotta Primary Gradient -->
+    <linearGradient id="terracottaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E57D5C" />
+      <stop offset="100%" stop-color="#D97757" />
+    </linearGradient>
+
+    <!-- Sage Accent Gradient -->
+    <linearGradient id="sageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5B846D" />
+      <stop offset="100%" stop-color="#4A705B" />
+    </linearGradient>
+
+    <!-- High-Impact Soft Drop Shadow -->
+    <filter id="badgeShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="20" flood-color="#D97757" flood-opacity="0.18" />
+    </filter>
+  </defs>
+
+  <!-- Solid Circle Badge Background -->
+  <circle cx="250" cy="250" r="235" fill="#FCF9F5" stroke="#D97757" stroke-width="5" filter="url(#badgeShadow)" />
+  <circle cx="250" cy="250" r="220" fill="none" stroke="#F4E6E1" stroke-width="2.5" />
+
+  <!-- Logo Emblem Group -->
+  <g transform="translate(0, 10)">
+    <!-- Food Dots -->
+    <circle cx="330" cy="180" r="8" fill="#D97757" opacity="0.45" />
+    <circle cx="365" cy="150" r="6" fill="#D97757" opacity="0.50" />
+    <circle cx="388" cy="195" r="10" fill="#E28666" opacity="0.40" />
+    <circle cx="395" cy="235" r="7" fill="#D97757" opacity="0.35" />
+    <circle cx="115" cy="230" r="7" fill="#D97757" opacity="0.40" />
+    <circle cx="102" cy="265" r="9" fill="#D97757" opacity="0.35" />
+
+    <circle cx="348" cy="130" r="9" fill="#4A705B" opacity="0.45" />
+    <circle cx="392" cy="168" r="5" fill="#5B846D" opacity="0.50" />
+    <circle cx="120" cy="185" r="6" fill="#4A705B" opacity="0.45" />
+
+    <circle cx="310" cy="148" r="6" fill="#E5A93C" opacity="0.50" />
+    <circle cx="378" cy="220" r="8.5" fill="#E5A93C" opacity="0.45" />
+    <circle cx="140" cy="155" r="7" fill="#E5A93C" opacity="0.45" />
+
+    <!-- Leaf / Heart Icon above 'M' -->
+    <path d="M 250 80
+             C 238 60, 215 60, 215 78
+             C 215 96, 250 120, 250 120
+             C 250 120, 285 96, 285 78
+             C 285 60, 262 60, 250 80 Z"
+          fill="url(#sageGrad)" />
+
+    <!-- High-Impact Bold Letter 'M' -->
+    <path d="M 120 295
+             C 120 185, 160 130, 200 130
+             C 232 130, 243 175, 250 200
+             C 257 175, 268 130, 300 130
+             C 340 130, 380 185, 380 295"
+          fill="none"
+          stroke="url(#terracottaGrad)"
+          stroke-width="34"
+          stroke-linecap="round"
+          stroke-linejoin="round" />
+  </g>
+
+  <!-- Brand Title Typography -->
+  <text x="250" y="398"
+        font-family="'Outfit', 'Plus Jakarta Sans', -apple-system, sans-serif"
+        font-size="44"
+        font-weight="800"
+        fill="#2D2623"
+        text-anchor="middle"
+        letter-spacing="-0.02em">majkatakata</text>
+
+  <!-- Subtitle Tagline -->
+  <text x="250" y="428"
+        font-family="'Plus Jakarta Sans', -apple-system, sans-serif"
+        font-size="15"
+        font-weight="700"
+        fill="#6B615B"
+        text-anchor="middle"
+        letter-spacing="3.5">BABY-LED WEANING</text>
+</svg>

@@ -1,161 +1,420 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Instagram Client Hub</title>
-    <style>
-      :root {
-        color-scheme: light;
-      }
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        background: #f7f8fb;
-        color: #1c1d23;
-      }
-      .hero {
-        background: linear-gradient(120deg, #833ab4, #fd1d1d, #fcb045);
-        color: white;
-        padding: 3.5rem 1.5rem;
-      }
-      .hero h1,
-      .hero p {
-        max-width: 800px;
-        margin: 0 auto 1rem;
-      }
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      .container {
-        max-width: 1100px;
-        margin: 0 auto;
-        padding: 2rem 1.5rem 3rem;
-      }
-      .grid {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      }
-      .card {
-        background: #fff;
-        border-radius: 14px;
-        padding: 1rem;
-        box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
-      }
-      form {
-        display: grid;
-        gap: 0.8rem;
-      }
-      input,
-      textarea {
-        width: 100%;
-        border: 1px solid #d8dbeb;
-        border-radius: 8px;
-        padding: 0.6rem;
-        font-size: 0.95rem;
-      }
-      button {
-        background: #833ab4;
-        color: white;
-        border: 0;
-        border-radius: 8px;
-        padding: 0.7rem 1rem;
-        cursor: pointer;
-        font-weight: 700;
-      }
-      .messages {
-        list-style: none;
-        margin: 1rem auto;
-        max-width: 1100px;
-        padding: 0 1.5rem;
-      }
-      .messages li {
-        background: #ddf8e8;
-        color: #0f5d2f;
-        padding: 0.8rem;
-        border-radius: 8px;
-      }
-      .muted {
-        color: #5f6378;
-        font-size: 0.9rem;
-      }
-    </style>
-  </head>
-  <body>
-    <header class="hero">
-      <h1>Instagram Growth Hub for Clients</h1>
-      <p>
-        Centralize Instagram strategy, playbooks, campaign knowledge, and lead capture in one place.
-        Built for teams that want to educate existing clients and attract new ones.
-      </p>
-    </header>
+<html lang="mk" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>majkatakata • Baby Led Weaning со Катерина</title>
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" type="image/svg+xml" href="{% static 'logo_color.svg' %}" />
 
-    {% if messages %}
-    <ul class="messages">
+  <!-- OpenGraph & Social Sharing Meta Tags -->
+  <meta property="og:title" content="majkatakata • Baby Led Weaning со Катерина" />
+  <meta property="og:description" content="Едноставен, радосен и стручно заснован пристап кон воведување на цврста храна — воден од вашето бебе." />
+  <meta property="og:image" content="{% static 'img/kate_1.jpg' %}" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD Structured Data (Schema.org / Google Search Snippets) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://majkatakata.com/#katerina",
+        "name": "Katerina Galić",
+        "alternateName": "Катерина Галиќ",
+        "jobTitle": "Certified Baby Led Weaning (BLW) Instructor",
+        "description": "Certified instructor for complementary feeding of newborns according to the Baby Led Weaning (BLW) method in North Macedonia.",
+        "url": "https://majkatakata.com/",
+        "sameAs": [
+          "https://www.instagram.com/majkatakata/"
+        ],
+        "knowsAbout": ["Baby Led Weaning", "Infant Nutrition", "Complementary Feeding", "BLW Workshops"]
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://majkatakata.com/#business",
+        "name": "majkatakata • Baby Led Weaning со Катерина",
+        "url": "https://majkatakata.com/",
+        "logo": "https://majkatakata.com/static/logo_color.svg",
+        "image": "https://majkatakata.com/static/img/kate_1.jpg",
+        "description": "Едноставен, радосен и стручно заснован пристап кон воведување на цврста храна — воден од вашето бебе.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "MK",
+          "addressLocality": "Skopje",
+          "addressRegion": "North Macedonia"
+        },
+        "founder": {
+          "@id": "https://majkatakata.com/#katerina"
+        },
+        "priceRange": "$$"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Anti-FOUC inline script -->
+  <script>
+    (function() {
+      const savedTheme = localStorage.getItem('majkatakata-theme');
+      if (savedTheme === 'dark' || savedTheme === 'light') {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+      const savedLang = localStorage.getItem('majkatakata-lang');
+      if (savedLang === 'en' || savedLang === 'mk') {
+        document.documentElement.setAttribute('lang', savedLang);
+      }
+    })();
+  </script>
+
+  <!-- Modern Custom Stylesheet -->
+  <link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+</head>
+<body>
+  <!-- Modern Header Navigation -->
+  <header class="site-header">
+    <nav class="main-nav">
+      <a href="{% url 'home' %}" class="nav-brand">
+        <img src="{% static 'logo_horizontal_color.svg' %}" alt="majkatakata logo" class="nav-logo-img" />
+      </a>
+      
+      <ul class="nav-links">
+        <li><a href="#about" class="nav-link" data-lang-mk="За мене" data-lang-en="About me">За мене</a></li>
+        <li><a href="#why" class="nav-link" data-lang-mk="Зошто BLW" data-lang-en="Why BLW">Зошто BLW</a></li>
+        <li><a href="#instagram" class="nav-link" data-lang-mk="Инстаграм" data-lang-en="Instagram">Инстаграм</a></li>
+        <li><a href="#connect" class="nav-link" data-lang-mk="Контакт" data-lang-en="Connect">Контакт</a></li>
+      </ul>
+
+      <div class="nav-controls">
+        <button id="lang-toggle" class="btn-pill-toggle" type="button" aria-label="Toggle language">
+          🇲🇰 MK | EN
+        </button>
+        <button id="theme-toggle" class="btn-pill-toggle" type="button" aria-label="Toggle theme">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="theme-text">Тема</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  {% if messages %}
+  <div class="section-container" style="padding-top: 1.5rem;">
+    <ul class="messages" style="list-style:none; padding:0; margin:0;">
       {% for message in messages %}
-      <li>{{ message }}</li>
+      <li style="background: #d1fae5; color: #065f46; padding: 1rem 1.25rem; border-radius: 12px; font-weight: 600;">{{ message }}</li>
       {% endfor %}
     </ul>
-    {% endif %}
+  </div>
+  {% endif %}
 
-    <main class="container">
-      <section class="grid" style="margin-bottom: 1.5rem">
-        <article class="card">
-          <h2>Featured Knowledge</h2>
-          {% if featured_article %}
-          <h3>{{ featured_article.title }}</h3>
-          <p>{{ featured_article.summary }}</p>
-          <p class="muted">Published {{ featured_article.created_at|date:"M d, Y" }}</p>
-          {% else %}
-          <p>No featured article yet. Create one in the Django admin panel.</p>
-          {% endif %}
-        </article>
+  <main>
+    <!-- Modern Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="hero-container">
+        <!-- SVG Emblem Logo -->
+        <img src="{% static 'logo_color.svg' %}" alt="majkatakata emblem logo" class="hero-logo-emblem" />
 
-        <article class="card">
-          <h2>Newsletter Subscription</h2>
-          <p class="muted">Capture top-of-funnel interest with a high-intent Instagram insights newsletter.</p>
-          <form method="post">
-            {% csrf_token %}
-            {{ newsletter_form.as_p }}
-            <button type="submit" name="newsletter-submit">Subscribe</button>
-          </form>
-        </article>
+        <span class="hero-pill-badge" data-lang-mk="Добредојдовте" data-lang-en="Welcome">Добредојдовте</span>
+        <h1 class="hero-tagline" data-lang-mk="Baby Led Weaning со Катерина – Помагаме на бебињата да растат со самодоверба, залог по залог" data-lang-en="Baby Led Weaning with Katerina – Helping Babies Grow with Confidence, One Bite at a Time">
+          Baby Led Weaning со Катерина – Помагаме на бебињата да растат со самодоверба, залог по залог
+        </h1>
+        <p class="hero-subtext" data-lang-mk="Едноставен, радосен и стручно заснован пристап кон воведување на цврста храна — воден од вашето бебе." data-lang-en="A simple, joyful, and evidence-informed approach to introducing real food—led by your baby.">
+          Едноставен, радосен и стручно заснован пристап кон воведување на цврста храна — воден од вашето бебе.
+        </p>
 
-        <article class="card">
-          <h2>Become a Client</h2>
-          <p class="muted">Let prospects submit their goals and Instagram handle for a quick audit.</p>
-          <form method="post">
-            {% csrf_token %}
-            {{ lead_form.as_p }}
-            <button type="submit" name="lead-submit">Request Consultation</button>
-          </form>
-        </article>
-      </section>
-
-      <section class="card">
-        <h2>Latest Instagram Strategy Articles</h2>
-        <div class="grid">
-          {% for article in latest_articles %}
-          <article class="card">
-            <h3>{{ article.title }}</h3>
-            <p>{{ article.summary }}</p>
-            <p class="muted">{{ article.created_at|date:"M d, Y" }}</p>
-          </article>
-          {% empty %}
-          <p>Add articles from admin to start building your knowledge hub.</p>
-          {% endfor %}
+        <!-- Main Hero Image -->
+        <div class="hero-media-wrapper">
+          <img class="hero-main-img" src="{% static 'img/kate_1.jpg' %}" alt="Baby Led Weaning со Катерина" fetchpriority="high" decoding="async" />
         </div>
-      </section>
 
-      <section class="card" style="margin-top: 1.5rem">
-        <h2>Admin Workflow</h2>
-        <ol>
-          <li>Create a superuser: <code>python manage.py createsuperuser</code></li>
-          <li>Log in at <code>/admin/</code></li>
-          <li>Manage articles, newsletter subscribers, and lead requests</li>
-        </ol>
-      </section>
-    </main>
-  </body>
+        <div class="hero-actions">
+          <a href="#connect" class="btn-primary-action" data-lang-mk="Пријави се за обука" data-lang-en="Sign Up for Training">Пријави се за обука</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section-block">
+      <div class="section-container">
+        <div class="card-box">
+          <div class="section-header-centered" style="margin-bottom: 2rem;">
+            <h2 class="section-title" data-lang-mk="Добредојдовте во BLW со Катерина" data-lang-en="Welcome to BLW with Katerina">Добредојдовте во BLW со Катерина</h2>
+          </div>
+
+          <div class="grid-2col">
+            <div>
+              <p class="lang-block-mk">Здраво и добредојдовте! Моето име е <strong>Катерина Галиќ</strong> и сум сертифициран инструктор за дополнителна исхрана на новороденчиња според методот <strong>Baby Led Weaning (BLW)</strong>. Преку овој простор споделувам знаење, насоки и секојдневна инспирација за поддршка на родителите кои се љубопитни за овој прекрасен, природен начин на воведување храна кај своите најмали.</p>
+              <p class="lang-block-en" style="display:none;">Hello and welcome! My name is <strong>Katerina Galić</strong>, and I am a certified instructor for complementary feeding of newborns according to the <strong>Baby Led Weaning (BLW)</strong> method. Through this space, I share knowledge, guidance, and everyday inspiration to support parents who are curious about this beautiful, natural way of introducing food to their little ones.</p>
+
+              <p class="lang-block-mk">Пристапот BLW е повеќе од само метод на хранење — тоа е филозофија која ги охрабрува бебињата сами да ја откриваат храната, со сопствено темпо. Ја почитува нивната независност, инстинкти и природна љубопитност. Со BLW, бебињата учат да земаат храна, да ја принесуваат до устата и да истражуваат различни вкусови, текстури и бои, сите градејќи важни моторни вештини и самодоверба.</p>
+              <p class="lang-block-en" style="display:none;">The BLW approach is more than just a feeding method—it is a philosophy that encourages babies to discover food on their own, at their own pace. It respects their independence, instincts, and natural curiosity. With BLW, babies learn to pick up food, bring it to their mouths, and explore different tastes, textures, and colors, all while building important motor skills and confidence.</p>
+            </div>
+            <div>
+              <img class="rounded-section-img" src="{% static 'img/res_2/cute-baby-boy-highchair-choosing-what-eat.jpg' %}" alt="Бебе истражува храна на столче" loading="lazy" decoding="async" />
+            </div>
+          </div>
+
+          <p class="lang-block-mk" style="margin-top: 1.5rem;">Во последниве години, сликите од мали бебиња кои држат големи парчиња храна станаа чести на социјалните мрежи. Но тука, во нашата заедница, BLW е сè уште релативно нова практика. Многу родители пристапуваат со љубопитност, но и со прашања, сомнежи и стравови. Мојата мисија е да понудам јасни, практични и на докази засновани одговори — охрабрувајќи ги родителите да веруваат во природните способности на нивните деца.</p>
+          <p class="lang-block-en" style="display:none; margin-top: 1.5rem;">In recent years, images of tiny babies holding big pieces of food have become common on social media. Yet here, in our community, BLW is still a relatively new practice. Many parents approach it with curiosity, but also with questions, doubts, and even fears. My mission is to offer clear, practical, and evidence-based answers—while encouraging parents to trust their children’s natural abilities.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why BLW Section -->
+    <section id="why" class="section-block">
+      <div class="section-container">
+        <div class="card-box">
+          <div class="section-header-centered" style="margin-bottom: 2rem;">
+            <h2 class="section-title" data-lang-mk="Зошто BLW?" data-lang-en="Why BLW?">Зошто BLW?</h2>
+          </div>
+
+          <div class="grid-2col">
+            <div>
+              <ul class="clean-check-list lang-block-mk">
+                <li><strong>Самодоверба и независност:</strong> Бебињата го водат процесот, правејќи ги оброците забавни и охрабрувачки.</li>
+                <li><strong>Семејна поврзаност:</strong> Седат на маса со сите останати, споделувајќи ја истата храна на соодветен начин за нивната возраст.</li>
+                <li><strong>Здрави навики:</strong> Без одвлекување внимание како екрани, бебињата учат да го слушаат своето тело и да уживаат во вистинска храна.</li>
+                <li><strong>Развојни придобивки:</strong> Од координација рака–око до вештини за џвакање, BLW ги зајакнува основните способности додека хранењето останува радосно.</li>
+              </ul>
+              <ul class="clean-check-list lang-block-en" style="display:none;">
+                <li><strong>Confidence &amp; independence:</strong> Babies lead the process, making mealtimes fun and empowering.</li>
+                <li><strong>Family connection:</strong> They sit at the table with everyone else, sharing the same food in an age-appropriate way.</li>
+                <li><strong>Healthy habits:</strong> Without distractions like screens, babies learn to listen to their bodies and enjoy real food.</li>
+                <li><strong>Developmental benefits:</strong> From hand–eye coordination to chewing skills, BLW strengthens essential abilities while keeping feeding joyful.</li>
+              </ul>
+            </div>
+            <div>
+              <img class="rounded-section-img" src="{% static 'img/res_2/plate_tray_baby_led_weaning_2.jpg' %}" alt="Безбедно подготвена чинија за бебе" loading="lazy" decoding="async" />
+            </div>
+          </div>
+
+          <h3 style="margin-top: 2rem;" data-lang-mk="Адресирање на чести загрижености" data-lang-en="Addressing Common Concerns">Адресирање на чести загрижености</h3>
+          <p class="lang-block-mk">Многу родители се грижат за заперкување или нередот при самостојното хранење. Истражувањата покажуваат дека бебињата кои следат BLW немаат поголем ризик од заперкување во споредба со бебињата хранети со лажичка. Важно е следењето на безбедносните насоки, правилно подготвување на храната и создавање мирна атмосфера за оброците. „Нередот“ може да изгледа застрашувачки на почетокот — но тој е витален дел од учењето. Секој допир, истурање и насмевка е чекор кон развојот.</p>
+          <p class="lang-block-en" style="display:none;">Many parents worry about choking or the messiness of self-feeding. Research shows that babies following BLW are not at higher risk of choking compared to spoon-fed babies. What’s important is following safety guidelines, preparing food correctly, and creating a calm environment for meals. The “mess” may seem overwhelming at first—but it’s a vital part of learning. Every squish, spill, and smile is a step toward growth.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modern Instagram Scroller Section -->
+    <section id="instagram" class="section-block">
+      <div class="section-container">
+        <div class="section-header-centered">
+          <h2 class="section-title" data-lang-mk="Инстаграм" data-lang-en="Instagram">Инстаграм</h2>
+          <p class="section-subtitle" data-lang-mk="Прелистајте ги последните објави. Допрете картичка за да ја отворите во нов таб. Претпочитате видео? Погледнете ги Reels." data-lang-en="Swipe through recent posts. Tap a card to open it in a new tab. Prefer video? Check out the Reels.">
+            Прелистајте ги последните објави. Допрете картичка за да ја отворите во нов таб. Претпочитате видео? Погледнете ги <a href="https://www.instagram.com/majkatakata/reels/" target="_blank" rel="noopener noreferrer"><strong>Reels</strong></a>.
+          </p>
+        </div>
+
+        <div class="ig-scroller" aria-label="Instagram posts carousel">
+          <!-- Post 1 -->
+          <a class="ig-card-modern" href="https://www.instagram.com/majkatakata/p/C4IRT5ONbo3/?hl=en" target="_blank" rel="noopener noreferrer">
+            <img src="{% static 'img/res_2/cute-baby-boy-highchair-choosing-what-eat.jpg' %}" alt="Baby Led Weaning post" loading="lazy" decoding="async" />
+            <div class="ig-card-caption" data-lang-mk="Истражување на првите текстури и самодоверба при самостојно хранење на столче." data-lang-en="Exploring first textures and self-feeding confidence at the highchair.">
+              Истражување на првите текстури и самодоверба при самостојно хранење на столче.
+            </div>
+            <div class="ig-card-footer">
+              <span class="subtle">@majkatakata</span>
+              <span data-lang-mk="Види објава ↗" data-lang-en="View Post ↗">Види објава ↗</span>
+            </div>
+          </a>
+
+          <!-- Post 2 -->
+          <a class="ig-card-modern" href="https://www.instagram.com/majkatakata/p/CL33DVYLHHU/?hl=en" target="_blank" rel="noopener noreferrer">
+            <img src="{% static 'img/res_2/baby-food-arrangement-top-view.jpg' %}" alt="BLW food arrangement" loading="lazy" decoding="async" />
+            <div class="ig-card-caption" data-lang-mk="Балансирани BLW оброци со свежи и разновидни природни состојки." data-lang-en="Balanced BLW meal arrangements with fresh, colorful real food ingredients.">
+              Балансирани BLW оброци со свежи и разновидни природни состојки.
+            </div>
+            <div class="ig-card-footer">
+              <span class="subtle">@majkatakata</span>
+              <span data-lang-mk="Види објава ↗" data-lang-en="View Post ↗">Види објава ↗</span>
+            </div>
+          </a>
+
+          <!-- Post 3 -->
+          <a class="ig-card-modern" href="https://www.instagram.com/majkatakata/p/CLjg9W9LCFc/?hl=en" target="_blank" rel="noopener noreferrer">
+            <img src="{% static 'img/res_2/plate_tray_baby_led_weaning_2.jpg' %}" alt="BLW plate tray" loading="lazy" decoding="async" />
+            <div class="ig-card-caption" data-lang-mk="Безбедно подготвени оброци во форма на прсти за лесно фаќање." data-lang-en="Age-appropriate food finger shapes prepared safely for easy baby grasping.">
+              Безбедно подготвени оброци во форма на прсти за лесно фаќање.
+            </div>
+            <div class="ig-card-footer">
+              <span class="subtle">@majkatakata</span>
+              <span data-lang-mk="Види објава ↗" data-lang-en="View Post ↗">Види објава ↗</span>
+            </div>
+          </a>
+
+          <!-- Post 4 -->
+          <a class="ig-card-modern" href="https://www.instagram.com/majkatakata/reels/" target="_blank" rel="noopener noreferrer">
+            <img src="{% static 'img/res_2/creamy-carrot-soup-2022-1500-6.jpg' %}" alt="Nutrient-rich carrot soup" loading="lazy" decoding="async" />
+            <div class="ig-card-caption" data-lang-mk="Хранливи рецепти, видео водичи и Reels за бебешко хранење." data-lang-en="Nutrient-rich recipes, video guides & Reels for baby-led self-feeding.">
+              Хранливи рецепти, видео водичи и Reels за бебешко хранење.
+            </div>
+            <div class="ig-card-footer">
+              <span class="subtle">@majkatakata/reels</span>
+              <span data-lang-mk="Гледај Reels ↗" data-lang-en="Watch Reels ↗">Гледај Reels ↗</span>
+            </div>
+          </a>
+        </div>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
+          <a href="https://www.instagram.com/majkatakata/" target="_blank" rel="noopener noreferrer" class="btn-secondary-action" data-lang-mk="Отвори на Инстаграм" data-lang-en="View on Instagram">
+            Отвори на Инстаграм
+          </a>
+          <a href="https://www.instagram.com/majkatakata/reels/" target="_blank" rel="noopener noreferrer" class="btn-primary-action" data-lang-mk="Гледај Reels" data-lang-en="Watch Reels">
+            Гледај Reels
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect & Registration Section (Exact Layout Matching Screenshot) -->
+    <section id="connect" class="section-block">
+      <div class="section-container">
+        <div class="connect-section-grid">
+          <!-- Left Side: Connect Content & Links -->
+          <div>
+            <span class="session-pill" data-lang-mk="Приклучи се на следната сесија" data-lang-en="Join Next Session">Приклучи се на следната сесија</span>
+            <h2 class="connect-heading" data-lang-mk="Поврзи се & Пријави се за обука" data-lang-en="Connect & Sign Up for Training">
+              Поврзи се & Пријави се за обука
+            </h2>
+            <p class="connect-desc" data-lang-mk="Подготвени сте да го започнете или усовршите вашето BLW патување? Регистрирајте го вашиот интерес подолу и ќе ви ги испратам следните термини за работилници, водичи и детали." data-lang-en="Ready to start or level up your BLW journey? Register your interest below and I'll send you upcoming workshop dates, guides, and details.">
+              Подготвени сте да го започнете или усовршите вашето BLW патување? Регистрирајте го вашиот интерес подолу и ќе ви ги испратам следните термини за работилници, водичи и детали.
+            </p>
+
+            <div class="contact-info-list">
+              <!-- Item 1: Instagram DMs -->
+              <div class="contact-info-item">
+                <div class="contact-icon-box ig-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-item-title" data-lang-mk="Инстаграм директни пораки" data-lang-en="Instagram Direct Messages">Инстаграм директни пораки</div>
+                  <a href="https://instagram.com/majkatakata" target="_blank" rel="noopener noreferrer" class="contact-item-link">@majkatakata</a>
+                </div>
+              </div>
+
+              <!-- Item 2: Official Sign-Up Link -->
+              <div class="contact-info-item">
+                <div class="contact-icon-box web-icon">
+                  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                </div>
+                <div>
+                  <div class="contact-item-title" data-lang-mk="Официјална линк-пријава" data-lang-en="Official Sign-Up Link">Официјална линк-пријава</div>
+                  <a href="https://shorturl.at/GhdGw" target="_blank" rel="noopener noreferrer" class="contact-item-link" data-lang-mk="Отвори Google формулар за регистрација" data-lang-en="Open Google Registration Form">Отвори Google формулар за регистрација</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side: Registration Form Card -->
+          <div class="registration-card">
+            <h3 class="registration-title" data-lang-mk="Регистрација на нов член" data-lang-en="New Member Registration">Регистрација на нов член</h3>
+            <p class="registration-subtitle" data-lang-mk="Пополнете ги вашите податоци за да се приклучите на нашата родителска заедница." data-lang-en="Fill out your details to join our parent community.">Пополнете ги вашите податоци за да се приклучите на нашата родителска заедница.</p>
+
+            <div id="registration-feedback" class="form-feedback-banner" style="display:none;" role="alert"></div>
+
+            <form id="registration-form" method="post">
+              {% csrf_token %}
+              <!-- Parent Full Name -->
+              <div class="form-group-styled">
+                <label for="{{ lead_form.name.id_for_label }}" data-lang-mk="Целосно име на родител" data-lang-en="Parent's Full Name">Целосно име на родител</label>
+                {{ lead_form.name }}
+              </div>
+
+              <!-- Email Address -->
+              <div class="form-group-styled">
+                <label for="{{ lead_form.email.id_for_label }}" data-lang-mk="Е-пошта" data-lang-en="Email Address">Е-пошта</label>
+                {{ lead_form.email }}
+              </div>
+
+              <!-- Baby's Stage -->
+              <div class="form-group-styled">
+                <label for="{{ lead_form.baby_stage.id_for_label }}" data-lang-mk="Моментална возраст / фаза на бебето" data-lang-en="Baby's Current Age / Stage">Моментална возраст / фаза на бебето</label>
+                {{ lead_form.baby_stage }}
+              </div>
+
+              <!-- Questions / Notes -->
+              <div class="form-group-styled">
+                <label for="{{ lead_form.message.id_for_label }}" data-lang-mk="Прашања или белешки (Опционално)" data-lang-en="Questions or Notes (Optional)">Прашања или белешки (Опционално)</label>
+                {{ lead_form.message }}
+              </div>
+
+              <!-- Anti-Spam Honeypot Field (Hidden from real users) -->
+              <div style="display:none !important;" aria-hidden="true">
+                {{ lead_form.honeypot }}
+              </div>
+
+              <!-- Seamless Human Verification Checkbox (Zero Friction UX) -->
+              <div class="form-group-styled human-verify-card">
+                <label class="custom-verify-label" for="id_lead-human_check">
+                  <input type="checkbox" id="id_lead-human_check" name="lead-human_check" value="1" required class="human-checkbox-input" />
+                  <span class="human-checkbox-custom">
+                    <svg viewBox="0 0 24 24" class="check-svg"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                  </span>
+                  <span class="verify-label-text" data-lang-mk="Потврдувам дека сум човек (Заштита од спам)" data-lang-en="I confirm I am human (Anti-spam protection)">Потврдувам дека сум човек (Заштита од спам)</span>
+                </label>
+                <div class="verify-shield-badge">
+                  <svg viewBox="0 0 24 24" class="shield-svg"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                  <span data-lang-mk="Заштитено" data-lang-en="Protected">Заштитено</span>
+                </div>
+              </div>
+
+              <button type="submit" id="btn-registration-submit" name="lead-submit" class="btn-submit-styled" data-lang-mk="Испрати пријава" data-lang-en="Submit Registration">
+                Испрати пријава
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Clean Brand Footer -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-logo-row">
+        <!-- SVG Logo Suite in Footer -->
+        <a href="{% url 'home' %}">
+          <img src="{% static 'logo_color.svg' %}" alt="majkatakata logo" class="footer-brand-logo footer-logo-color" />
+          <img src="{% static 'logo_black_white.svg' %}" alt="majkatakata monochrome logo" class="footer-brand-logo footer-logo-bw" />
+        </a>
+        <div style="display: flex; gap: 1rem;">
+          <a href="https://instagram.com/majkatakata" target="_blank" rel="noopener noreferrer" class="btn-secondary-action">Instagram @majkatakata</a>
+        </div>
+      </div>
+
+      <div class="footer-credits-grid">
+        <div>
+          <h4 data-lang-mk="Сертификати и квалификации" data-lang-en="Credentials">Сертификати и квалификации</h4>
+          <ul class="clean-check-list lang-block-mk" style="margin-top: 0.75rem;">
+            <li>Сертифициран инструктор за <em>Baby Led Weaning</em> метод на хранење 📖</li>
+            <li>Онлајн обуки за родители 💻</li>
+            <li>Solid Starts PRO сертифициран 📝</li>
+            <li>Сертифициран BLW обучувач</li>
+          </ul>
+          <ul class="clean-check-list lang-block-en" style="display:none; margin-top: 0.75rem;">
+            <li>Certified instructor for <em>Baby Led Weaning</em> method of feeding 📖</li>
+            <li>Online training for parents 💻</li>
+            <li>Solid Starts PRO Certified 📝</li>
+            <li>Certified BLW instructor</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <p>© <span id="year"></span> majkatakata • Baby Led Weaning со Катерина • Помагаме на бебињата да растат со самодоверба, залог по залог.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Theme & Language Switcher JavaScript -->
+  <script src="{% static 'js/theme.js' %}"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
 </html>

@@ -34,7 +34,8 @@ class LeadRequest(models.Model):
     name = models.CharField(max_length=120)
     email = models.EmailField()
     instagram_handle = models.CharField(max_length=120, blank=True)
-    message = models.TextField()
+    baby_stage = models.CharField(max_length=120, blank=True, default='Expecting (Pregnant)')
+    message = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
