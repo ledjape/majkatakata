@@ -812,3 +812,146 @@ footer.site-footer {
   padding-top: 1.5rem;
   border-top: 1px solid var(--border-color);
 }
+
+/* ==========================================================================
+   Comprehensive Mobile & Tablet Responsive Media Queries
+   ========================================================================== */
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Tablet & Mobile Navigation Breakpoint (<= 900px) */
+@media (max-width: 900px) {
+  nav.main-nav {
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .nav-logo-img {
+    height: 44px;
+  }
+
+  .nav-links {
+    gap: 1rem;
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    padding-top: 0.5rem;
+    border-top: 1px dashed var(--border-color);
+    margin-top: 0.25rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .nav-controls {
+    gap: 0.5rem;
+  }
+
+  .btn-pill-toggle {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablet & Mobile Content Grid Breakpoint (<= 850px) */
+@media (max-width: 850px) {
+  .grid-2col,
+  .connect-section-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .section-block {
+    padding: 3rem 1rem;
+  }
+
+  .card-box {
+    padding: 1.75rem 1.25rem;
+    border-radius: 18px;
+  }
+
+  .rounded-section-img {
+    height: 260px;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Smartphone Hero & Form Breakpoint (<= 600px) */
+@media (max-width: 600px) {
+  section.hero-section {
+    padding: 2.5rem 1rem 2rem;
+  }
+
+  .hero-logo-emblem {
+    width: 105px;
+    height: 105px;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-pill-badge {
+    font-size: 0.75rem;
+    padding: 0.35rem 1rem;
+  }
+
+  .hero-tagline {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin: 1rem 0;
+  }
+
+  .hero-subtext {
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-main-img {
+    border-radius: 16px;
+  }
+
+  .btn-primary-action {
+    width: 100%;
+    padding: 0.95rem 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .registration-card {
+    padding: 1.5rem 1.1rem;
+    border-radius: 18px;
+  }
+
+  .registration-title {
+    font-size: 1.4rem;
+  }
+
+  .human-verify-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+  }
+
+  .verify-shield-badge {
+    align-self: flex-end;
+  }
+
+  .ig-card-modern {
+    flex: 0 0 260px;
+  }
+
+  .footer-logo-row {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-brand-logo {
+    height: 40px;
+  }
+}
