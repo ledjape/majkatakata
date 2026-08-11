@@ -9,8 +9,12 @@ from .models import KnowledgeArticle
 
 
 def home(request):
-    featured_article = KnowledgeArticle.objects.filter(is_featured=True).first()
-    latest_articles = KnowledgeArticle.objects.all()[:6]
+    try:
+        featured_article = KnowledgeArticle.objects.filter(is_featured=True).first()
+        latest_articles = KnowledgeArticle.objects.all()[:6]
+    except Exception:
+        featured_article = None
+        latest_articles = []
 
     newsletter_form = NewsletterForm(prefix='newsletter')
     lead_form = LeadRequestForm(prefix='lead')
