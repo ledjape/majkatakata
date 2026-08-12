@@ -59,16 +59,10 @@
   <!-- Anti-FOUC inline script -->
   <script>
     (function() {
-      const savedTheme = localStorage.getItem('majkatakata-theme');
-      if (savedTheme === 'dark' || savedTheme === 'light') {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-      } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-      const savedLang = localStorage.getItem('majkatakata-lang');
-      if (savedLang === 'en' || savedLang === 'mk') {
-        document.documentElement.setAttribute('lang', savedLang);
-      }
+      const savedTheme = localStorage.getItem('majkatakata-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      const savedLang = localStorage.getItem('majkatakata-lang') || 'mk';
+      document.documentElement.setAttribute('lang', savedLang);
     })();
   </script>
 
