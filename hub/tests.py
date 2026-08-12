@@ -25,6 +25,7 @@ class RegistrationFormTestCase(TestCase):
             'lead-name': 'Ana Galić',
             'lead-email': 'ana.galic@example.com',
             'lead-baby_stage': 'Expecting (Pregnant)',
+            'lead-training_course_signup': 'Yes',
             'lead-message': 'Testing registration form submission',
             'lead-human_check': '1',
             'lead-honeypot': '',
@@ -40,6 +41,7 @@ class RegistrationFormTestCase(TestCase):
         lead = LeadRequest.objects.first()
         self.assertEqual(lead.name, 'Ana Galić')
         self.assertEqual(lead.email, 'ana.galic@example.com')
+        self.assertEqual(lead.training_course_signup, 'Yes')
 
         self.assertEqual(len(mail.outbox), 1)
         email = mail.outbox[0]
@@ -55,6 +57,7 @@ class RegistrationFormTestCase(TestCase):
             'lead-name': 'Elena Risteska',
             'lead-email': 'elena@example.com',
             'lead-baby_stage': '0-6 months',
+            'lead-training_course_signup': 'Yes',
             'lead-message': 'Testing AJAX submission',
             'lead-human_check': '1',
             'lead-honeypot': '',
@@ -79,6 +82,7 @@ class RegistrationFormTestCase(TestCase):
             'lead-name': 'Bot User',
             'lead-email': 'bot@example.com',
             'lead-baby_stage': '0-6 months',
+            'lead-training_course_signup': 'Yes',
         }
 
         response = self.client.post(self.url, post_data, HTTP_X_REQUESTED_WITH='XMLHttpRequest')
@@ -99,6 +103,7 @@ class RegistrationFormTestCase(TestCase):
             'lead-name': 'Spam Bot',
             'lead-email': 'spambot@example.com',
             'lead-baby_stage': '0-6 months',
+            'lead-training_course_signup': 'Yes',
             'lead-human_check': '1',
             'lead-honeypot': 'http://spam-link.com',
         }

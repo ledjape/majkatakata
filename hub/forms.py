@@ -9,6 +9,11 @@ STAGE_CHOICES = (
     ('12+ months', '12+ months'),
 )
 
+COURSE_SIGNUP_CHOICES = (
+    ('Yes', 'Да, сакам да се пријавам за обука со Катерина (Yes)'),
+    ('No', 'Не, во моментов сакам само информации (No)'),
+)
+
 
 class NewsletterForm(forms.ModelForm):
     class Meta:
@@ -25,6 +30,13 @@ class LeadRequestForm(forms.ModelForm):
         widget=forms.Select(attrs={'class': 'form-select'})
     )
 
+    training_course_signup = forms.ChoiceField(
+        choices=COURSE_SIGNUP_CHOICES,
+        initial='Yes',
+        required=True,
+        widget=forms.Select(attrs={'class': 'form-select'})
+    )
+
     human_check = forms.BooleanField(
         required=True,
         error_messages={'required': 'Ве молиме потврдете дека сте човек.'}
@@ -37,7 +49,7 @@ class LeadRequestForm(forms.ModelForm):
 
     class Meta:
         model = LeadRequest
-        fields = ('name', 'email', 'baby_stage', 'message')
+        fields = ('name', 'email', 'baby_stage', 'training_course_signup', 'message')
         widgets = {
             'name': forms.TextInput(attrs={'placeholder': 'e.g. Ana Galić'}),
             'email': forms.EmailInput(attrs={'placeholder': 'name@example.com'}),

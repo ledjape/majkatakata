@@ -45,6 +45,7 @@ def home(request):
                     f"👤 Име на родител: {lead.name}\n"
                     f"📧 Е-пошта: {lead.email}\n"
                     f"👶 Фаза на бебето: {lead.baby_stage}\n"
+                    f"🎓 Пријава за обука со Катерина: {'Да (Потврдено)' if lead.training_course_signup else 'Не'}\n"
                     f"📝 Прашања/Белешки: {lead.message or 'Нема белешки'}\n\n"
                     f"Детали во Admin: http://127.0.0.1:8000/admin/hub/leadrequest/{lead.id}/change/"
                 )

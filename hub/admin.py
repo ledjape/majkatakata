@@ -19,5 +19,6 @@ class NewsletterSubscriberAdmin(admin.ModelAdmin):
 
 @admin.register(LeadRequest)
 class LeadRequestAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'instagram_handle', 'created_at')
+    list_display = ('name', 'email', 'training_course_signup', 'baby_stage', 'created_at')
+    list_filter = ('training_course_signup', 'baby_stage', 'created_at')
     search_fields = ('name', 'email', 'instagram_handle', 'message')
