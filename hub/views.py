@@ -55,7 +55,7 @@ def home(request):
                         subject=subject,
                         message=message,
                         from_email=getattr(settings, 'DEFAULT_FROM_EMAIL', 'pejahs@gmail.com'),
-                        recipient_list=getattr(settings, 'NOTIFICATION_RECIPIENTS', ['pejahs@gmail.com']),
+                        recipient_list=getattr(settings, 'NOTIFICATION_RECIPIENTS', ['delikates@gmail.com']),
                         fail_silently=True,
                     )
                 except Exception as e:

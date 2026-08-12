@@ -83,6 +83,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Email Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'majkatakata <pejahs@gmail.com>'
-NOTIFICATION_RECIPIENTS = ['pejahs@gmail.com']
+NOTIFICATION_RECIPIENTS = ['delikates@gmail.com', 'pejahs@gmail.com']
 
 
