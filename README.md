@@ -1,7 +1,5 @@
 # majkatakata.com
 
-Live site: https://majkatakata.com
-
 A minimal one-page site built for speed and easy growth.
 
 ## Tech
