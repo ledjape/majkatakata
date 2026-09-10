@@ -87,8 +87,14 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Email Configuration
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'pejahs@gmail.com'
+EMAIL_HOST_PASSWORD = 'avfqhlsfwiiuufpi'
 DEFAULT_FROM_EMAIL = 'majkatakata <pejahs@gmail.com>'
 NOTIFICATION_RECIPIENTS = ['delikates@gmail.com', 'pejahs@gmail.com']
+
 
 
