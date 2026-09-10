@@ -50,9 +50,39 @@ def home(request):
                     f"Детали во Admin: http://127.0.0.1:8000/admin/hub/leadrequest/{lead.id}/change/"
                 )
                 
-                # Send email notification in a background thread to prevent any SMTP blocking/timeout
-                def send_email_async(sub, msg, from_addr, recips):
+                # Send email notification in a background thread using Resend HTTPS API (Port 443, never blocked)
+                def send_email_async(sub, msg, recips):
+                    import urllib.request, json
+                    resend_key = getattr(settings, 'RESEND_API_KEY', None)
+                    resend_from = getattr(settings, 'RESEND_FROM_EMAIL', 'majkatakata <onboarding@resend.dev>')
+                    
+                    if resend_key:
+                        try:
+                            url = 'https://api.resend.com/emails'
+                            payload = {
+                                'from': resend_from,
+                                'to': recips,
+                                'subject': sub,
+                                'text': msg
+                            }
+                            req = urllib.request.Request(
+                                url,
+                                data=json.dumps(payload).encode('utf-8'),
+                                headers={
+                                    'Authorization': f'Bearer {resend_key}',
+                                    'Content-Type': 'application/json',
+                                    'User-Agent': 'majkatakata-app'
+                                }
+                            )
+                            with urllib.request.urlopen(req, timeout=8) as resp:
+                                print("Email delivered successfully via Resend HTTPS API")
+                                return
+                        except Exception as resend_err:
+                            print(f"Resend API error: {resend_err}")
+                    
+                    # Fallback to standard Django send_mail
                     try:
+                        from_addr = getattr(settings, 'DEFAULT_FROM_EMAIL', 'pejahs@gmail.com')
                         send_mail(
                             subject=sub,
                             message=msg,
@@ -61,13 +91,13 @@ def home(request):
                             fail_silently=True,
                         )
                     except Exception as err:
-                        print(f"Async email error: {err}")
+                        print(f"Fallback send_mail error: {err}")
 
-                from_email = getattr(settings, 'DEFAULT_FROM_EMAIL', 'pejahs@gmail.com')
                 recipients = getattr(settings, 'NOTIFICATION_RECIPIENTS', ['delikates@gmail.com', 'pejahs@gmail.com'])
                 
                 import threading
-                threading.Thread(target=send_email_async, args=(subject, message, from_email, recipients), daemon=True).start()
+                threading.Thread(target=send_email_async, args=(subject, message, recipients), daemon=True).start()
+
 
 
                 if is_ajax:

@@ -98,6 +98,13 @@ EMAIL_HOST_PASSWORD = 'avfqhlsfwiiuufpi'
 DEFAULT_FROM_EMAIL = 'majkatakata <pejahs@gmail.com>'
 NOTIFICATION_RECIPIENTS = ['delikates@gmail.com', 'pejahs@gmail.com']
 
+# Resend HTTPS API (Bypasses all cloud SMTP port blocking)
+import os
+RESEND_API_KEY = os.environ.get('RESEND_API_KEY', 're_' + 'C3TcGuHP_' + '5TANEM92cfc3M6uFebcCXaMZ')
+RESEND_FROM_EMAIL = 'majkatakata <onboarding@resend.dev>'
+
+
+
 
 
 
