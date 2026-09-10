@@ -50,16 +50,25 @@ def home(request):
                     f"Детали во Admin: http://127.0.0.1:8000/admin/hub/leadrequest/{lead.id}/change/"
                 )
                 
-                try:
-                    send_mail(
-                        subject=subject,
-                        message=message,
-                        from_email=getattr(settings, 'DEFAULT_FROM_EMAIL', 'pejahs@gmail.com'),
-                        recipient_list=getattr(settings, 'NOTIFICATION_RECIPIENTS', ['delikates@gmail.com']),
-                        fail_silently=True,
-                    )
-                except Exception as e:
-                    print(f"Error sending lead notification email: {e}")
+                # Send email notification in a background thread to prevent any SMTP blocking/timeout
+                def send_email_async(sub, msg, from_addr, recips):
+                    try:
+                        send_mail(
+                            subject=sub,
+                            message=msg,
+                            from_email=from_addr,
+                            recipient_list=recips,
+                            fail_silently=True,
+                        )
+                    except Exception as err:
+                        print(f"Async email error: {err}")
+
+                from_email = getattr(settings, 'DEFAULT_FROM_EMAIL', 'pejahs@gmail.com')
+                recipients = getattr(settings, 'NOTIFICATION_RECIPIENTS', ['delikates@gmail.com', 'pejahs@gmail.com'])
+                
+                import threading
+                threading.Thread(target=send_email_async, args=(subject, message, from_email, recipients), daemon=True).start()
+
 
                 if is_ajax:
                     return JsonResponse({
