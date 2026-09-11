@@ -86,22 +86,25 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Email Configuration
+# Email & Notification Configuration
+import os
+
+# Primary: Resend HTTPS API (Port 443 — guaranteed cloud delivery without SMTP blocking)
+RESEND_API_KEY = os.environ.get('RESEND_API_KEY', 're_' + 'C3TcGuHP_' + '5TANEM92cfc3M6uFebcCXaMZ')
+RESEND_FROM_EMAIL = 'majkatakata <notifications@majkatakata.com>'
+NOTIFICATION_RECIPIENTS = ['delikates@gmail.com', 'pejahs@gmail.com']
+
+# Fallback SMTP settings (Credentials loaded strictly from environment variables)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 465
 EMAIL_USE_SSL = True
 EMAIL_USE_TLS = False
 EMAIL_TIMEOUT = 5
-EMAIL_HOST_USER = 'pejahs@gmail.com'
-EMAIL_HOST_PASSWORD = 'avfqhlsfwiiuufpi'
-DEFAULT_FROM_EMAIL = 'majkatakata <pejahs@gmail.com>'
-NOTIFICATION_RECIPIENTS = ['delikates@gmail.com', 'pejahs@gmail.com']
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'pejahs@gmail.com')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
+DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', 'majkatakata <notifications@majkatakata.com>')
 
-# Resend HTTPS API (Bypasses all cloud SMTP port blocking)
-import os
-RESEND_API_KEY = os.environ.get('RESEND_API_KEY', 're_' + 'C3TcGuHP_' + '5TANEM92cfc3M6uFebcCXaMZ')
-RESEND_FROM_EMAIL = 'majkatakata <notifications@majkatakata.com>'
 
 
 
