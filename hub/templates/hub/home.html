@@ -107,89 +107,44 @@
   {% endif %}
 
   <main>
-    <!-- Modern Hero Section - Mockup Layout Matched -->
-    <section class="hero-section hero-mockup-layout" id="home">
-      <div class="hero-mockup-top">
-        <div class="hero-mockup-grid">
-          <!-- Left Content -->
-          <div class="hero-mockup-text">
-            <h1 class="hero-mockup-title" data-lang-mk="Започнете го вашето патување за бебешко хранење заедно!" data-lang-en="Start Your Baby-Led Weaning Journey Together!">
-              Започнете го вашето патување за бебешко хранење заедно!
-            </h1>
-            <p class="hero-mockup-subtext" data-lang-mk="Едноставен, радосен и стручно заснован пристап кон воведување на цврста храна — воден од вашето бебе." data-lang-en="A simple, joyful, and evidence-informed approach to introducing real food—led by your baby.">
-              Едноставен, радосен и стручно заснован пристап кон воведување на цврста храна — воден од вашето бебе.
-            </p>
-            <div class="hero-mockup-cta">
-              <a href="#gallery" class="btn-primary-action" data-lang-mk="Истражи ги советите" data-lang-en="Explore Recipes">
-                Истражи ги советите
-              </a>
-            </div>
-          </div>
+    <!-- Modern Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="hero-container">
+        <!-- SVG Emblem Logo -->
+        <img src="{% static 'logo_color.svg' %}" alt="majkatakata emblem logo" class="hero-logo-emblem" />
 
-          <!-- Right Hero Media with Light Blue Curved Arch -->
-          <div class="hero-mockup-media">
-            <div class="hero-arch-bg"></div>
-            <img class="hero-mockup-img" src="{% static 'img/res_2/cute-baby-boy-highchair-choosing-what-eat.jpg' %}" alt="Start Your Baby-Led Weaning Journey Together" fetchpriority="high" decoding="async" />
+        <span class="hero-pill-badge" data-lang-mk="Добредојдовте" data-lang-en="Welcome">Добредојдовте</span>
+        <h1 class="hero-tagline" data-lang-mk="Baby Led Weaning со Катерина – Помагаме на бебињата да растат со самодоверба, залог по залог" data-lang-en="Baby Led Weaning with Katerina – Helping Babies Grow with Confidence, One Bite at a Time">
+          Baby Led Weaning со Катерина – Помагаме на бебињата да растат со самодоверба, залог по залог
+        </h1>
+        <p class="hero-subtext" data-lang-mk="Едноставен, радосен и стручно заснован пристап кон воведување на цврста храна — воден од вашето бебе." data-lang-en="A simple, joyful, and evidence-informed approach to introducing real food—led by your baby.">
+          Едноставен, радосен и стручно заснован пристап кон воведување на цврста храна — воден од вашето бебе.
+        </p>
+
+        <!-- Main Hero Image -->
+        <div class="hero-media-wrapper" style="position: relative;">
+          <img class="hero-main-img" src="{% static 'img/kate_1.jpg' %}" alt="Baby Led Weaning со Катерина" fetchpriority="high" decoding="async" />
+          <div class="hero-author-badge">
+            <h4 class="hero-author-name">Katerina Galić</h4>
+            <p class="hero-author-title" data-lang-mk="Сертифициран BLW специјалист" data-lang-en="Certified BLW Specialist">Сертифициран BLW специјалист</p>
           </div>
         </div>
-      </div>
 
-      <!-- Overlapping Glassmorphic Recent Recipes Bar -->
-      <div class="hero-recipes-overlay">
-        <div class="recipes-overlay-container">
-          <div class="recipes-overlay-header">
-            <h3 data-lang-mk="Скорешни совети & рецепти" data-lang-en="Recent Recipes">Скорешни совети & рецепти</h3>
-          </div>
-          <div class="recipes-overlay-grid">
-            <!-- Card 1 -->
-            <div class="recipe-mini-card">
-              <img src="{% static 'img/res_2/plate_tray_baby_led_weaning_2.jpg' %}" alt="Avocado Mash" />
-              <div class="recipe-mini-info">
-                <h4 data-lang-mk="Авокадо пире" data-lang-en="Avocado Mash">Авокадо пире</h4>
-                <span class="recipe-tag-easy" data-lang-mk="Лесно" data-lang-en="Easy">Лесно</span>
-              </div>
-            </div>
-
-            <!-- Card 2 -->
-            <div class="recipe-mini-card">
-              <img src="{% static 'img/res_2/BABY-led-weaning-foods.jpg' %}" alt="Sweet Potato Sticks" />
-              <div class="recipe-mini-info">
-                <h4 data-lang-mk="Сладок компир" data-lang-en="Sweet Potato Sticks">Сладок компир</h4>
-                <span class="recipe-tag-easy" data-lang-mk="Лесно" data-lang-en="Easy">Лесно</span>
-              </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="recipe-mini-card">
-              <img src="{% static 'img/res_2/creamy-carrot-soup-2022-1500-6.jpg' %}" alt="Carrot Sticks" />
-              <div class="recipe-mini-info">
-                <h4 data-lang-mk="Морков стапчиња" data-lang-en="Carrot Sticks">Морков стапчиња</h4>
-                <span class="recipe-tag-easy" data-lang-mk="Лесно" data-lang-en="Easy">Лесно</span>
-              </div>
-            </div>
-
-            <!-- Card 4 (Guide side card) -->
-            <div class="recipe-mini-card recipe-guide-card">
-              <img src="{% static 'img/res_2/eating_BLW_1.jpg' %}" alt="Our Guide" />
-              <div class="recipe-mini-info">
-                <h4 data-lang-mk="Наш Водич" data-lang-en="Our Guide">Наш Водич</h4>
-                <p data-lang-mk="Стручно заснована платформа за хранење водена од вашето бебе." data-lang-en="Evidence-informed feeding platform led by your baby.">Стручно заснована платформа за хранење водена од вашето бебе.</p>
-              </div>
-            </div>
-          </div>
+        <div class="hero-actions">
+          <a href="#connect" class="btn-primary-action" data-lang-mk="Пријави се за обука" data-lang-en="Sign Up for Training">Пријави се за обука</a>
         </div>
       </div>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section-block" style="padding-top: 5rem;">
+    <section id="about" class="section-block">
       <div class="section-container">
         <div class="card-box">
           <div class="section-header-centered" style="margin-bottom: 2rem;">
             <h2 class="section-title" data-lang-mk="Добредојдовте во BLW со Катерина" data-lang-en="Welcome to BLW with Katerina">Добредојдовте во BLW со Катерина</h2>
           </div>
 
-          <div class="grid-2col" style="align-items: center; gap: 2.5rem;">
+          <div class="grid-2col">
             <div>
               <p class="lang-block-mk">Здраво и добредојдовте! Моето име е <strong>Катерина Галиќ</strong> и сум сертифициран инструктор за дополнителна исхрана на новороденчиња според методот <strong>Baby Led Weaning (BLW)</strong>. Преку овој простор споделувам знаење, насоки и секојдневна инспирација за поддршка на родителите кои се љубопитни за овој прекрасен, природен начин на воведување храна кај своите најмали.</p>
               <p class="lang-block-en" style="display:none;">Hello and welcome! My name is <strong>Katerina Galić</strong>, and I am a certified instructor for complementary feeding of newborns according to the <strong>Baby Led Weaning (BLW)</strong> method. Through this space, I share knowledge, guidance, and everyday inspiration to support parents who are curious about this beautiful, natural way of introducing food to their little ones.</p>
@@ -198,16 +153,10 @@
               <p class="lang-block-en" style="display:none;">The BLW approach is more than just a feeding method—it is a philosophy that encourages babies to discover food on their own, at their own pace. It respects their independence, instincts, and natural curiosity. With BLW, babies learn to pick up food, bring it to their mouths, and explore different tastes, textures, and colors, all while building important motor skills and confidence.</p>
             </div>
             <div>
-              <!-- Katica's Photo Moved to Welcome Section -->
-              <div class="hero-media-wrapper" style="position: relative; margin-bottom: 0;">
-                <img class="rounded-section-img" src="{% static 'img/kate_1.jpg' %}" alt="Katerina Galić • Certified BLW Specialist" loading="lazy" decoding="async" />
-                <div class="hero-author-badge">
-                  <h4 class="hero-author-name">Katerina Galić</h4>
-                  <p class="hero-author-title" data-lang-mk="Сертифициран BLW специјалист" data-lang-en="Certified BLW Specialist">Сертифициран BLW специјалист</p>
-                </div>
-              </div>
+              <img class="rounded-section-img" src="{% static 'img/res_2/cute-baby-boy-highchair-choosing-what-eat.jpg' %}" alt="Бебе истражува храна на столче" loading="lazy" decoding="async" />
             </div>
           </div>
+
 
           <p class="lang-block-mk" style="margin-top: 1.5rem;">Во последниве години, сликите од мали бебиња кои држат големи парчиња храна станаа чести на социјалните мрежи. Но тука, во нашата заедница, BLW е сè уште релативно нова практика. Многу родители пристапуваат со љубопитност, но и со прашања, сомнежи и стравови. Мојата мисија е да понудам јасни, практични и на докази засновани одговори — охрабрувајќи ги родителите да веруваат во природните способности на нивните деца.</p>
           <p class="lang-block-en" style="display:none; margin-top: 1.5rem;">In recent years, images of tiny babies holding big pieces of food have become common on social media. Yet here, in our community, BLW is still a relatively new practice. Many parents approach it with curiosity, but also with questions, doubts, and even fears. My mission is to offer clear, practical, and evidence-based answers—while encouraging parents to trust their children’s natural abilities.</p>
