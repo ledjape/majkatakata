@@ -42,9 +42,18 @@ class LeadRequestForm(forms.ModelForm):
         error_messages={'required': 'Ве молиме потврдете дека сте човек.'}
     )
 
+    # Stealth Honeypots: attractive to automated bots, hidden from humans
     honeypot = forms.CharField(
         required=False,
-        widget=forms.TextInput(attrs={'style': 'display:none !important;', 'tabindex': '-1', 'autocomplete': 'off'})
+        widget=forms.TextInput(attrs={'tabindex': '-1', 'autocomplete': 'off'})
+    )
+    website_url = forms.CharField(
+        required=False,
+        widget=forms.TextInput(attrs={'tabindex': '-1', 'autocomplete': 'off'})
+    )
+    form_ts = forms.CharField(
+        required=False,
+        widget=forms.HiddenInput()
     )
 
     class Meta:
@@ -59,8 +68,30 @@ class LeadRequestForm(forms.ModelForm):
             }),
         }
 
-    def clean_honeypot(self):
-        hp = self.cleaned_data.get('honeypot')
-        if hp:
-            raise forms.ValidationError("Bot submission detected.")
-        return hp
+    def clean(self):
+        cleaned_data = super().clean()
+        hp = cleaned_data.get('honeypot')
+        website = cleaned_data.get('website_url')
+        ts = cleaned_data.get('form_ts')
+
+        # 1. Stealth Honeypot check: If any honeypot was filled, flag as spam
+        if hp or website:
+            cleaned_data['is_spam'] = True
+            return cleaned_data
+
+        # 2. Time-Gate check: Real humans take at least 3 seconds to complete the form
+        if ts:
+            try:
+                import time
+                rendered_at = float(ts)
+                elapsed = time.time() - rendered_at
+                if elapsed < 3.0:
+                    cleaned_data['is_spam'] = True
+                    return cleaned_data
+            except (ValueError, TypeError):
+                cleaned_data['is_spam'] = True
+                return cleaned_data
+
+        cleaned_data['is_spam'] = False
+        return cleaned_data
+

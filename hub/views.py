@@ -16,8 +16,9 @@ def home(request):
         featured_article = None
         latest_articles = []
 
+    import time
     newsletter_form = NewsletterForm(prefix='newsletter')
-    lead_form = LeadRequestForm(prefix='lead')
+    lead_form = LeadRequestForm(prefix='lead', initial={'form_ts': time.time()})
 
     if request.method == 'POST':
         is_ajax = request.headers.get('x-requested-with') == 'XMLHttpRequest' or 'application/json' in request.headers.get('accept', '')
@@ -36,7 +37,20 @@ def home(request):
         elif 'lead-submit' in request.POST or is_ajax:
             lead_form = LeadRequestForm(request.POST, prefix='lead')
             if lead_form.is_valid():
+                # Anti-Spam Defense: Silent drop if flagged by honeypot or time-gate
+                if lead_form.cleaned_data.get('is_spam'):
+                    print(f"🛡️ Spam bot detected and silently dropped: {lead_form.cleaned_data.get('name')} | {lead_form.cleaned_data.get('email')}")
+                    if is_ajax:
+                        return JsonResponse({
+                            'success': True,
+                            'message_mk': 'Благодариме! Вашата пријава е успешно испратена. Ќе ве контактираме наскоро.',
+                            'message_en': 'Thank you! Your registration has been submitted successfully. We will reach out soon.'
+                        })
+                    messages.success(request, 'Благодариме! Вашата пријава е успешно испратена.')
+                    return redirect('home')
+
                 lead = lead_form.save()
+
                 
                 # Send email notification to recipient list
                 subject = f"🍼 Нова пријава за BLW обука: {lead.name}"
