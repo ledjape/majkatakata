@@ -1,7 +1,7 @@
 from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import redirect, render
 
 from .forms import LeadRequestForm, NewsletterForm
@@ -133,3 +133,30 @@ def home(request):
         'lead_form': lead_form,
     }
     return render(request, 'hub/home.html', context)
+
+
+def google_verification(request):
+    return HttpResponse('google-site-verification: google8e77f9c223e6e972.html', content_type='text/html')
+
+
+def robots_txt(request):
+    content = """User-agent: *
+Allow: /
+
+Sitemap: https://majkatakata.com/sitemap.xml
+"""
+    return HttpResponse(content.strip(), content_type='text/plain')
+
+
+def sitemap_xml(request):
+    content = """<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://majkatakata.com/</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>"""
+    return HttpResponse(content.strip(), content_type='application/xml')
+

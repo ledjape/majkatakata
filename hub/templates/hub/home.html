@@ -18,11 +18,17 @@
   <!-- LCP Image Preload (Instant Hero Paint & Zero CLS) -->
   <link rel="preload" as="image" href="{% static 'img/kate_1.jpg' %}" fetchpriority="high" />
 
-  <!-- OpenGraph & Social Sharing Meta Tags -->
+  <!-- SEO Canonical, Verification & Social Meta Tags -->
+  <link rel="canonical" href="https://majkatakata.com/" />
+  <meta name="google-site-verification" content="google8e77f9c223e6e972" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="description" content="Официјална веб-страница за Baby Led Weaning (BLW) со Катерина Галиќ во Македонија. Сертифициран инструктор и Solid Starts претставник за исхрана на бебиња, обуки и совети." />
   <meta property="og:title" content="majkatakata • Baby Led Weaning со Катерина" />
   <meta property="og:description" content="Едноставен, радосен и стручно заснован пристап кон воведување на цврста храна — воден од вашето бебе." />
+  <meta property="og:url" content="https://majkatakata.com/" />
   <meta property="og:image" content="{% static 'img/kate_1.jpg' %}" />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="mk_MK" />
   <meta name="twitter:card" content="summary_large_image" />
 
   <!-- JSON-LD Structured Data (Schema.org / Google Search Snippets) -->
@@ -61,6 +67,44 @@
           "@id": "https://majkatakata.com/#katerina"
         },
         "priceRange": "$$"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://majkatakata.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Што претставува Baby Led Weaning (BLW) методот?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Baby Led Weaning (BLW) е природен начин на воведување цврста храна каде бебето самостојно се храни со соодветно подготвени парчиња храна уште од почетокот (околу 6 месеци), наместо пасирана храна со лажичка."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Кога е бебето подготвено за почеток со цврста храна?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Главни знаци за подготвеност се: бебето има околу 6 месеци, може стабилно да седи со минимална поддршка, има добра контрола на главата и вратот, и покажува активен интерес за храната на возрасните."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Дали постои ризик од давење при BLW методот?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Научните студии покажуваат дека нема зголемен ризик од давење во споредба со хранење со лажичка, под услов храната да биде безбедно и правилно подготвена и бебето секогаш да седи исправено под надзор на возрасен."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Како се организирани обуките и работилниците?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Обуките се организирани како он-деманд работилници прилагодени според договорени термини и распоред со родителите. Работилниците се одржуваат во мали групи од 5 до 20 учесници или како индивидуални 1-на-1 консултации."
+            }
+          }
+        ]
       }
     ]
   }
