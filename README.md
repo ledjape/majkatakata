@@ -8,12 +8,16 @@ Official web platform for **Baby Led Weaning (BLW) со Катерина** — c
 
 ## 🚀 Tech Stack
 
-- **Backend**: Django 5.2 & Python 3.12
-- **Database**: SQLite
-- **Frontend**: HTML5, Vanilla JavaScript, Custom CSS Design System
-- **i18n**: Macedonian (`mk`) Primary / English (`en`) Secondary
-- **Hosting & CI/CD**: Render ([`render.yaml`](render.yaml) & [`build.sh`](build.sh))
-- **DNS**: AWS Route53
+- **Backend**: Django 5.2 & Python 3.12 (WSGI / Gunicorn & WhiteNoise)
+- **Database**: SQLite3
+- **Frontend**: Semantic HTML5, Vanilla JavaScript (ES6+), Custom Responsive CSS Design System (Light/Dark mode)
+- **UI/UX & Performance**: Zero-CLS dimensioning, LCP preloading, CSS Grid dynamic accordion, `content-visibility` containment
+- **Forms & Security**: Django CSRF, AJAX async submission, multi-layer bot defense (stealth honeypot & time-gate validation)
+- **Email Notifications**: Resend HTTPS API (Port 443) with background worker thread & fallback SMTP
+- **SEO & Social**: OpenGraph, Twitter Cards, Schema.org JSON-LD Structured Data (`Person` & `LocalBusiness`)
+- **i18n**: Bilingual client-side runtime switching — Macedonian (`mk`) Primary / English (`en`) Secondary
+- **Hosting & CI/CD**: Render Web Service ([`render.yaml`](render.yaml) & [`build.sh`](build.sh))
+- **DNS & SSL**: AWS Route53 & Automated Managed TLS
 
 ---
 
