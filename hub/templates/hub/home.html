@@ -6,7 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>majkatakata • Baby Led Weaning со Катерина</title>
   <meta name="color-scheme" content="light dark" />
+  <meta name="theme-color" content="#F8F5F1" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#141211" media="(prefers-color-scheme: dark)" />
   <link rel="icon" type="image/svg+xml" href="{% static 'logo_color.svg' %}" />
+
+  <!-- Preconnect & Asynchronous Google Fonts (Zero-Render-Blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" />
+
+  <!-- LCP Image Preload (Instant Hero Paint & Zero CLS) -->
+  <link rel="preload" as="image" href="{% static 'img/kate_1.jpg' %}" fetchpriority="high" />
 
   <!-- OpenGraph & Social Sharing Meta Tags -->
   <meta property="og:title" content="majkatakata • Baby Led Weaning со Катерина" />
@@ -74,13 +84,14 @@
   <header class="site-header">
     <nav class="main-nav">
       <a href="{% url 'home' %}" class="nav-brand">
-        <img src="{% static 'logo_horizontal_color.svg' %}" alt="majkatakata logo" class="nav-logo-img" />
+        <img src="{% static 'logo_horizontal_color.svg' %}" alt="majkatakata logo" class="nav-logo-img" width="220" height="42" />
       </a>
       
       <ul class="nav-links">
         <li><a href="#about" class="nav-link" data-lang-mk="За мене" data-lang-en="About me">За мене</a></li>
         <li><a href="#why" class="nav-link" data-lang-mk="Зошто BLW" data-lang-en="Why BLW">Зошто BLW</a></li>
         <li><a href="#gallery" class="nav-link" data-lang-mk="Галерија" data-lang-en="Gallery">Галерија</a></li>
+        <li><a href="#faq" class="nav-link" data-lang-mk="ЧПП" data-lang-en="FAQ">ЧПП</a></li>
         <li><a href="#connect" class="nav-link" data-lang-mk="Контакт" data-lang-en="Connect">Контакт</a></li>
       </ul>
 
@@ -111,7 +122,7 @@
     <section class="hero-section" id="home">
       <div class="hero-container">
         <!-- SVG Emblem Logo -->
-        <img src="{% static 'logo_color.svg' %}" alt="majkatakata emblem logo" class="hero-logo-emblem" />
+        <img src="{% static 'logo_color.svg' %}" alt="majkatakata emblem logo" class="hero-logo-emblem" width="150" height="150" />
 
         <span class="hero-pill-badge" data-lang-mk="Добредојдовте" data-lang-en="Welcome">Добредојдовте</span>
         <h1 class="hero-tagline" data-lang-mk="Baby Led Weaning со Катерина – Помагаме на бебињата да растат со самодоверба, залог по залог" data-lang-en="Baby Led Weaning with Katerina – Helping Babies Grow with Confidence, One Bite at a Time">
@@ -123,7 +134,7 @@
 
         <!-- Main Hero Image -->
         <div class="hero-media-wrapper" style="position: relative;">
-          <img class="hero-main-img" src="{% static 'img/kate_1.jpg' %}" alt="Baby Led Weaning со Катерина" fetchpriority="high" decoding="async" />
+          <img class="hero-main-img" src="{% static 'img/kate_1.jpg' %}" alt="Baby Led Weaning со Катерина" width="960" height="600" fetchpriority="high" decoding="async" />
           <div class="hero-author-badge">
             <h4 class="hero-author-name">Katerina Galić</h4>
             <p class="hero-author-title" data-lang-mk="Сертифициран BLW специјалист" data-lang-en="Certified BLW Specialist">Сертифициран BLW специјалист</p>
@@ -139,7 +150,7 @@
     <!-- About Section -->
     <section id="about" class="section-block">
       <div class="section-container">
-        <div class="card-box">
+        <div class="card-box scroll-reveal">
           <div class="section-header-centered" style="margin-bottom: 2rem;">
             <h2 class="section-title" data-lang-mk="Добредојдовте во BLW со Катерина" data-lang-en="Welcome to BLW with Katerina">Добредојдовте во BLW со Катерина</h2>
           </div>
@@ -153,7 +164,7 @@
               <p class="lang-block-en" style="display:none;">The BLW approach is more than just a feeding method—it is a philosophy that encourages babies to discover food on their own, at their own pace. It respects their independence, instincts, and natural curiosity. With BLW, babies learn to pick up food, bring it to their mouths, and explore different tastes, textures, and colors, all while building important motor skills and confidence.</p>
             </div>
             <div>
-              <img class="rounded-section-img" src="{% static 'img/res_2/cute-baby-boy-highchair-choosing-what-eat.jpg' %}" alt="Бебе истражува храна на столче" loading="lazy" decoding="async" />
+              <img class="rounded-section-img" src="{% static 'img/res_2/cute-baby-boy-highchair-choosing-what-eat.jpg' %}" alt="Бебе истражува храна на столче" width="600" height="450" loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -179,7 +190,7 @@
     <!-- Our Core Philosophy Section -->
     <section id="philosophy" class="section-block" style="padding-top: 0;">
       <div class="section-container">
-        <div class="card-box philosophy-card-box">
+        <div class="card-box philosophy-card-box scroll-reveal">
           <h3 class="philosophy-title" data-lang-mk="Нашата основна филозофија" data-lang-en="Our Core Philosophy">Нашата основна филозофија</h3>
 
           <div class="philosophy-list">
@@ -217,7 +228,7 @@
     <!-- Why BLW Section -->
     <section id="why" class="section-block">
       <div class="section-container">
-        <div class="card-box">
+        <div class="card-box scroll-reveal">
           <div class="section-header-centered" style="margin-bottom: 2rem;">
             <h2 class="section-title" data-lang-mk="Зошто BLW?" data-lang-en="Why BLW?">Зошто BLW?</h2>
           </div>
@@ -238,7 +249,7 @@
               </ul>
             </div>
             <div>
-              <img class="rounded-section-img" src="{% static 'img/res_2/plate_tray_baby_led_weaning_2.jpg' %}" alt="Безбедно подготвена чинија за бебе" loading="lazy" decoding="async" />
+              <img class="rounded-section-img" src="{% static 'img/res_2/plate_tray_baby_led_weaning_2.jpg' %}" alt="Безбедно подготвена чинија за бебе" width="600" height="450" loading="lazy" decoding="async" />
             </div>
           </div>
 
@@ -262,7 +273,7 @@
         <div class="ig-scroller" aria-label="BLW educational tips gallery">
           <!-- Card 1 -->
           <div class="ig-card-modern">
-            <img src="{% static 'img/res_2/cute-baby-boy-highchair-choosing-what-eat.jpg' %}" alt="Baby Led Weaning tip" loading="lazy" decoding="async" />
+            <img src="{% static 'img/res_2/cute-baby-boy-highchair-choosing-what-eat.jpg' %}" alt="Baby Led Weaning tip" width="280" height="240" loading="lazy" decoding="async" />
             <div class="ig-card-caption" data-lang-mk="Истражување на првите текстури и самодоверба при самостојно хранење на столче." data-lang-en="Exploring first textures and self-feeding confidence at the highchair.">
               Истражување на првите текстури и самодоверба при самостојно хранење на столче.
             </div>
@@ -273,7 +284,7 @@
 
           <!-- Card 2 -->
           <div class="ig-card-modern">
-            <img src="{% static 'img/res_2/baby-food-arrangement-top-view.jpg' %}" alt="BLW food arrangement" loading="lazy" decoding="async" />
+            <img src="{% static 'img/res_2/baby-food-arrangement-top-view.jpg' %}" alt="BLW food arrangement" width="280" height="240" loading="lazy" decoding="async" />
             <div class="ig-card-caption" data-lang-mk="Балансирани BLW оброци со свежи и разновидни природни состојки." data-lang-en="Balanced BLW meal arrangements with fresh, colorful real food ingredients.">
               Балансирани BLW оброци со свежи и разновидни природни состојки.
             </div>
@@ -284,7 +295,7 @@
 
           <!-- Card 3 -->
           <div class="ig-card-modern">
-            <img src="{% static 'img/res_2/plate_tray_baby_led_weaning_2.jpg' %}" alt="BLW plate tray" loading="lazy" decoding="async" />
+            <img src="{% static 'img/res_2/plate_tray_baby_led_weaning_2.jpg' %}" alt="BLW plate tray" width="280" height="240" loading="lazy" decoding="async" />
             <div class="ig-card-caption" data-lang-mk="Безбедно подготвени оброци во форма на прсти за лесно фаќање." data-lang-en="Age-appropriate food finger shapes prepared safely for easy baby grasping.">
               Безбедно подготвени оброци во форма на прсти за лесно фаќање.
             </div>
@@ -295,7 +306,7 @@
 
           <!-- Card 4 -->
           <div class="ig-card-modern">
-            <img src="{% static 'img/res_2/creamy-carrot-soup-2022-1500-6.jpg' %}" alt="Nutrient-rich carrot soup" loading="lazy" decoding="async" />
+            <img src="{% static 'img/res_2/creamy-carrot-soup-2022-1500-6.jpg' %}" alt="Nutrient-rich carrot soup" width="280" height="240" loading="lazy" decoding="async" />
             <div class="ig-card-caption" data-lang-mk="Хранливи рецепти, идеи и насоки за бебешко хранење." data-lang-en="Nutrient-rich recipes, ideas & guidance for baby-led self-feeding.">
               Хранливи рецепти, идеи и насоки за бебешко хранење.
             </div>
@@ -306,7 +317,7 @@
         </div>
 
         <!-- Educational Safety Feature Block (Choking and gagging on food) -->
-        <div class="choking-safety-box" style="margin-top: 2.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm);">
+        <div class="choking-safety-box scroll-reveal" style="margin-top: 2.5rem; background: var(--bg-card); border: 1px solid var(--border-color); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-sm);">
           <div class="grid-2col" style="align-items: center; gap: 2rem;">
             <div>
               <span class="session-pill" style="background: rgba(217, 119, 87, 0.15); color: var(--primary);" data-lang-mk="Школа за безбедност" data-lang-en="Safety First Guide">Школа за безбедност</span>
@@ -321,12 +332,14 @@
               </p>
             </div>
             <div>
-              <img src="{% static 'img/res_2/eating_BLW_1.jpg' %}" alt="Choking and gagging on food guide" class="rounded-section-img" style="box-shadow: var(--shadow-sm);" loading="lazy" decoding="async" />
+              <img src="{% static 'img/res_2/eating_BLW_1.jpg' %}" alt="Choking and gagging on food guide" class="rounded-section-img" width="600" height="450" style="box-shadow: var(--shadow-sm);" loading="lazy" decoding="async" />
             </div>
           </div>
         </div>
       </div>
     </section>
+
+
 
     <!-- Connect & Registration Section (Exact Layout Matching Screenshot) -->
     <section id="connect" class="section-block">
@@ -416,6 +429,115 @@
         </div>
       </div>
     </section>
+
+    <!-- Interactive FAQ Section (Positioned Below Connect / Contact Form & Above Footer) -->
+    <section id="faq" class="section-block">
+      <div class="section-container">
+        <div class="card-box scroll-reveal">
+          <div class="section-header-centered" style="margin-bottom: 2rem;">
+            <span class="session-pill" data-lang-mk="Често поставувани прашања" data-lang-en="Frequently Asked Questions">Често поставувани прашања</span>
+            <h2 class="section-title" style="margin-top: 0.85rem;" data-lang-mk="Сè што треба да знаете за BLW" data-lang-en="Everything You Need to Know About BLW">
+              Сè што треба да знаете за BLW
+            </h2>
+            <p class="section-subtitle" data-lang-mk="Одговори на најчестите дилеми и прашања кои ги имаат родителите кога започнуваат со дополнителна исхрана." data-lang-en="Answers to the most common questions and doubts parents have when starting complementary feeding.">
+              Одговори на најчестите дилеми и прашања кои ги имаат родителите кога започнуваат со дополнителна исхрана.
+            </p>
+          </div>
+
+          <div class="faq-list">
+            <!-- Item 1: Readiness -->
+            <details class="faq-card-item" open>
+              <summary class="faq-card-summary">
+                <span class="faq-card-question" data-lang-mk="Кога е вистинското време да започнеме со BLW?" data-lang-en="When is the right time to start BLW?">Кога е вистинското време да започнеме со BLW?</span>
+                <span class="faq-card-badge" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-content-wrapper">
+                <div class="faq-card-body">
+                  <p class="lang-block-mk">
+                    Најчесто околу <strong>6-тиот месец</strong>, кога бебето ги исполнува сите знаци на подготвеност: стабилно и самостојно седи на столче за хранење со добра контрола на главата и вратот, покажува љубопитност и интерес за храната на масата, и го има изгубено рефлексот за автоматско исфрлање на храната со јазичето.
+                  </p>
+                  <p class="lang-block-en" style="display:none;">
+                    Typically around <strong>6 months of age</strong>, when baby meets all developmental readiness signs: sitting upright unassisted with strong head and neck control, showing genuine interest in table foods, and having lost the infant tongue-thrust reflex.
+                  </p>
+                </div>
+              </div>
+            </details>
+
+            <!-- Item 2: Choking vs Gagging -->
+            <details class="faq-card-item">
+              <summary class="faq-card-summary">
+                <span class="faq-card-question" data-lang-mk="Дали постои поголем ризик од заперкување со BLW?" data-lang-en="Is there a higher risk of choking with BLW?">Дали постои поголем ризик од заперкување со BLW?</span>
+                <span class="faq-card-badge" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-content-wrapper">
+                <div class="faq-card-body">
+                  <p class="lang-block-mk">
+                    Научните истражувања покажуваат дека бебињата хранети по BLW методот <strong>немаат поголем ризик од заперкување</strong> во споредба со традиционално хранетите со кашички, под услов храната да се подготвува во соодветни форми (меки стапчиња) и бебето секогаш да седи исправено под надзор. Нагонот за повраќање (gagging) е природен заштитен рефлекс кој му помага на бебето да научи да управува со залакот.
+                  </p>
+                  <p class="lang-block-en" style="display:none;">
+                    Scientific research shows that BLW infants <strong>do not have a higher choking risk</strong> compared to spoon-fed infants, provided foods are prepared in age-appropriate soft textures (finger sticks) and baby is seated upright under supervision. Gagging is a natural, protective developmental reflex that teaches baby oral motor mastery.
+                  </p>
+                </div>
+              </div>
+            </details>
+
+            <!-- Item 3: Teeth Requirement -->
+            <details class="faq-card-item">
+              <summary class="faq-card-summary">
+                <span class="faq-card-question" data-lang-mk="Дали бебето мора да има израснато заби пред да започне?" data-lang-en="Does my baby need teeth before starting BLW?">Дали бебето мора да има израснато заби пред да започне?</span>
+                <span class="faq-card-badge" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-content-wrapper">
+                <div class="faq-card-body">
+                  <p class="lang-block-mk">
+                    <strong>Не! Забите не се предуслов.</strong> Бебешките непца се исклучително силни и цврсти – тие можат лесно да џвакаат и пасираат меко подготвена храна (како варен морков, банана, сладок компир или авокадо). Првите катници кои служат за џвакање обично никнуваат по првата година.
+                  </p>
+                  <p class="lang-block-en" style="display:none;">
+                    <strong>No! Teeth are not required.</strong> Infant gums are remarkably strong and efficient at mashing appropriately soft foods (such as steamed carrots, banana, sweet potato, and avocado). True molars used for heavy chewing do not emerge until well into the second year.
+                  </p>
+                </div>
+              </div>
+            </details>
+
+            <!-- Item 4: Course Format -->
+            <details class="faq-card-item">
+              <summary class="faq-card-summary">
+                <span class="faq-card-question" data-lang-mk="Како изгледаат онлајн обуките и консултациите со Катерина?" data-lang-en="What do online trainings and consultations with Katerina look like?">Како изгледаат онлајн обуките и консултациите со Катерина?</span>
+                <span class="faq-card-badge" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-content-wrapper">
+                <div class="faq-card-body">
+                  <p class="lang-block-mk">
+                    Работилниците се организираат на барање (on-demand) и се целосно прилагодени според заеднички договорени термини што најмногу им одговараат на родителите. Групите се со големина од 5 до 20 учесници, со цел секој родител да добие лично внимание, простор за прашања и интерактивна поддршка. По обуката добивате практични дигитални водичи и директна поддршка за безгрижен почеток.
+                  </p>
+                  <p class="lang-block-en" style="display:none;">
+                    Workshops are organized on-demand and scheduled around mutually convenient timelines that suit parents' routines. Groups typically range from 5 to 20 participants, ensuring a warm, interactive atmosphere with plenty of space for personalized guidance and Q&amp;A. Following the session, you receive practical digital guides and ongoing support for a calm, confident start.
+                  </p>
+                </div>
+              </div>
+            </details>
+
+            <!-- Item 5: Combined Feeding -->
+            <details class="faq-card-item">
+              <summary class="faq-card-summary">
+                <span class="faq-card-question" data-lang-mk="Дали можам да комбинирам пиреа и BLW?" data-lang-en="Can I combine purees and finger foods?">Дали можам да комбинирам пиреа и BLW?</span>
+                <span class="faq-card-badge" aria-hidden="true"></span>
+              </summary>
+              <div class="faq-content-wrapper">
+                <div class="faq-card-body">
+                  <p class="lang-block-mk">
+                    <strong>Апсолутно да.</strong> Воведувањето цврста храна не треба да биде извор на стрес или ригидни правила. Многу родители успешно применуваат респонзивно хранење каде му даваат на бебето да држи претходно наполнета лажичка со погуста каша, паралелно со меки парчиња храна за самостојно истражување.
+                  </p>
+                  <p class="lang-block-en" style="display:none;">
+                    <strong>Absolutely yes.</strong> Introducing solids should never be a source of rigid stress. Many families practice responsive feeding by offering pre-loaded spoons with thick purees alongside soft finger foods for independent sensory exploration.
+                  </p>
+                </div>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <!-- Clean Brand Footer -->
@@ -424,8 +546,8 @@
       <div class="footer-logo-row">
         <!-- SVG Logo Suite in Footer -->
         <a href="{% url 'home' %}">
-          <img src="{% static 'logo_color.svg' %}" alt="majkatakata logo" class="footer-brand-logo footer-logo-color" />
-          <img src="{% static 'logo_black_white.svg' %}" alt="majkatakata monochrome logo" class="footer-brand-logo footer-logo-bw" />
+          <img src="{% static 'logo_color.svg' %}" alt="majkatakata logo" class="footer-brand-logo footer-logo-color" width="48" height="48" />
+          <img src="{% static 'logo_black_white.svg' %}" alt="majkatakata monochrome logo" class="footer-brand-logo footer-logo-bw" width="48" height="48" />
         </a>
         <div style="display: flex; gap: 1rem;">
           <a href="#connect" class="btn-primary-action" style="text-decoration:none;" data-lang-mk="Пријави се за обука" data-lang-en="Sign Up for Training">Пријави се за обука</a>
@@ -456,8 +578,8 @@
     </div>
   </footer>
 
-  <!-- Theme & Language Switcher JavaScript -->
-  <script src="{% static 'js/theme.js' %}"></script>
+  <!-- Theme & Language Switcher JavaScript (Deferred Non-Blocking Execution) -->
+  <script src="{% static 'js/theme.js' %}" defer></script>
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>

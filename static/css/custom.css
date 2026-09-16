@@ -1,6 +1,4 @@
 /* Modern, Clean Design System for majkatakata */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
-
 :root {
   scroll-behavior: smooth;
   --font-heading: 'Outfit', -apple-system, sans-serif;
@@ -248,6 +246,7 @@ section.hero-section {
 img.hero-main-img {
   width: 100%;
   max-height: 500px;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
@@ -358,6 +357,7 @@ img.hero-main-img {
 img.rounded-section-img {
   width: 100%;
   max-height: 420px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-md);
@@ -1095,3 +1095,185 @@ html, body {
     height: 40px;
   }
 }
+
+/* Modern Performance & Accessibility Enhancements */
+#gallery,
+#why,
+#connect,
+#faq,
+.site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 700px;
+}
+
+/* Modern Accessible Focus Indicators */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   majkatakata Native FAQ Accordion (Positioned Below Contact & Above Footer)
+   ========================================================================== */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-card-item {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background-color: var(--bg-main);
+  box-shadow: var(--shadow-sm);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-normal);
+  overflow: hidden;
+}
+
+.faq-card-item:hover {
+  border-color: var(--primary);
+}
+
+.faq-card-item[open] {
+  border-color: var(--primary);
+  box-shadow: var(--shadow-md);
+}
+
+.faq-card-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  gap: 1rem;
+}
+
+/* Hide native browser disclosure triangles across all browsers */
+.faq-card-summary::-webkit-details-marker {
+  display: none !important;
+}
+
+.faq-card-summary::marker {
+  display: none !important;
+}
+
+.faq-card-question {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  line-height: 1.4;
+  transition: color var(--transition-fast);
+}
+
+.faq-card-item:hover .faq-card-question {
+  color: var(--primary);
+}
+
+.faq-card-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--primary-subtle);
+  flex-shrink: 0;
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color var(--transition-fast);
+}
+
+/* Crisp CSS Chevron matching site design */
+.faq-card-badge::after {
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-right: 2.5px solid var(--primary);
+  border-bottom: 2.5px solid var(--primary);
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), border-color var(--transition-fast);
+}
+
+.faq-card-item[open] .faq-card-badge {
+  background-color: var(--primary);
+  transform: rotate(180deg);
+}
+
+.faq-card-item[open] .faq-card-badge::after {
+  border-color: #FFFFFF;
+  transform: translateY(-1px) rotate(45deg);
+}
+
+/* Ultra-Smooth CSS Grid Animation for Accordion */
+.faq-content-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.38s cubic-bezier(0.25, 1, 0.5, 1);
+  overflow: hidden;
+}
+
+.faq-card-item[open] .faq-content-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.faq-card-body {
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 1.5rem 0 1.5rem;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.28s ease, transform 0.28s ease, padding 0.38s ease;
+}
+
+.faq-card-item[open] .faq-card-body {
+  padding: 1.1rem 1.5rem 1.4rem 1.5rem;
+  opacity: 1;
+  transform: translateY(0);
+  border-top: 1px dashed var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.faq-card-body p {
+  margin: 0;
+}
+
+.faq-card-body p + p {
+  margin-top: 0.65rem;
+}
+
+/* ==========================================================================
+   Smooth Scroll-Reveal Animations (Item 3)
+   ========================================================================== */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+

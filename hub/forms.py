@@ -60,8 +60,16 @@ class LeadRequestForm(forms.ModelForm):
         model = LeadRequest
         fields = ('name', 'email', 'baby_stage', 'training_course_signup', 'message')
         widgets = {
-            'name': forms.TextInput(attrs={'placeholder': 'e.g. Ana Galić'}),
-            'email': forms.EmailInput(attrs={'placeholder': 'name@example.com'}),
+            'name': forms.TextInput(attrs={
+                'placeholder': 'e.g. Ana Galić',
+                'autocomplete': 'name',
+                'autocapitalize': 'words',
+            }),
+            'email': forms.EmailInput(attrs={
+                'placeholder': 'name@example.com',
+                'autocomplete': 'email',
+                'inputmode': 'email',
+            }),
             'message': forms.Textarea(attrs={
                 'rows': 3,
                 'placeholder': 'Tell me about your baby or any specific questions...'

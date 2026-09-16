@@ -179,6 +179,83 @@
     });
   }
 
+  // --- Smooth Scroll-Reveal Animation (Item 3) ---
+  function initScrollReveal() {
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.scroll-reveal').forEach(el => el.classList.add('revealed'));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      threshold: 0.12,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.scroll-reveal').forEach(el => {
+      observer.observe(el);
+    });
+  }
+
+  // --- Smooth Native Accordion Controller ---
+  function initSmoothFaq() {
+    const items = document.querySelectorAll('.faq-card-item');
+    if (!items.length) return;
+
+    items.forEach(details => {
+      const summary = details.querySelector('.faq-card-summary');
+      const wrapper = details.querySelector('.faq-content-wrapper');
+      if (!summary || !wrapper) return;
+
+      summary.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // If currently open -> animate closed then remove open attr
+        if (details.open) {
+          wrapper.style.gridTemplateRows = '0fr';
+          const body = details.querySelector('.faq-card-body');
+          if (body) {
+            body.style.opacity = '0';
+            body.style.transform = 'translateY(-6px)';
+          }
+          setTimeout(() => {
+            details.removeAttribute('open');
+            wrapper.style.gridTemplateRows = '';
+            if (body) {
+              body.style.opacity = '';
+              body.style.transform = '';
+            }
+          }, 320);
+        } else {
+          // Open smoothly
+          details.setAttribute('open', '');
+          // Optional: close other open items for exclusive accordion feel
+          items.forEach(other => {
+            if (other !== details && other.open) {
+              const otherWrapper = other.querySelector('.faq-content-wrapper');
+              if (otherWrapper) {
+                otherWrapper.style.gridTemplateRows = '0fr';
+                setTimeout(() => {
+                  other.removeAttribute('open');
+                  otherWrapper.style.gridTemplateRows = '';
+                }, 320);
+              } else {
+                other.removeAttribute('open');
+              }
+            }
+          });
+        }
+      });
+    });
+  }
+
   // Initialize script execution on DOMContentLoaded
   document.addEventListener('DOMContentLoaded', () => {
     const initialTheme = getPreferredTheme();
@@ -188,6 +265,8 @@
     setLanguage(initialLang);
 
     initAjaxRegistrationForm();
+    initScrollReveal();
+    initSmoothFaq();
 
     const themeBtn = document.getElementById('theme-toggle');
     if (themeBtn) {
@@ -206,3 +285,4 @@
     });
   });
 })();
+
